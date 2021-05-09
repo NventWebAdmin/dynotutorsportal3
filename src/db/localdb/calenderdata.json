@@ -1,0 +1,318 @@
+{
+    "localdbdata":{"data":[
+       
+          {
+            "attendeeuserid": {
+              "0": {
+                "email": "",
+                "label": "",
+                "name": "",
+                "phone": ""
+              }
+            },
+            "body": "Postpaid Tutors Admin is inviting you to a scheduled Zoom meeting.<br/><br/> Topic: Maths 1st Standard<br/> Time: Mar 18, 2021 05:00 PM India<br/> Every day, until Mar 24, 2021, 7 occurrence(s)<br/> Mar 18, 2021 05:00 PM<br/> Mar 19, 2021 05:00 PM<br/> Mar 20, 2021 05:00 PM<br/>Mar 21, 2021 05:00 PM<br/>Mar 22, 2021 05:00 PM<br/> Mar 23, 2021 05:00 PM<br/>Mar 24, 2021 05:00 PM<br/>Please download and import the following iCalendar (.ics) files to your calendar system.<br/>Daily: https://zoom.us/meeting/tJ0odeiprTsoH9xsSqtUIZA3mJRPbdNUPE_K/ics?icsToken=98tyKuChqzkrG9eVshyPRox5GYjod-vztmJBgvpFjyz0FxV6WCKlO8hwArB7Pu3g<br/><br/> Join Zoom Meeting<br/> https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09<br/><br/> Meeting ID: 995 2113 0258<br/>Passcode: 5Y4eZ1<br/><br/> ",
+            "enddate": "2021-04-01T17:30:00",
+            "id": "evt-usr-postpaidtutorsadmin-2021-04-01T17:00:00-1615122683599",
+            "organizeruserid": "usr-postpaidtutorsadmin",
+            "hostuserid": {
+                "0": {
+                  "email": "",
+                  "label": "",
+                  "name": "",
+                  "phone": ""
+                }
+              },
+            "orgname": "postpaidtutors",
+            "startdate": "2021-04-01T17:00:00",
+            "subject": "Maths 1st Standard",
+            "defaultdatafilter": {  "subject" : "maths" , "class":"first" },
+            "type": "zoommeet",
+            "recurrency":{"isrecurring":"true","type":"daily", "startdate":"2021-04-01T00:00:00", "enddate":"2021-04-31T00:00:00"},
+            "internetaccessdata":{"meetingid":"995 2113 0258", "url":"https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09", "passcode":"5Y4eZ1"},
+            "phoneaccessdata":{"dialnumber":"", "dialpasscode":""},
+            "locationdata":{"fulladdress":"","gocode":""}
+          },
+          {
+            "attendeeuserid": {
+              "0": {
+                "email": "",
+                "label": "",
+                "name": "",
+                "phone": ""
+              }
+            },
+            "body": "Postpaid Tutors Admin is inviting you to a scheduled Zoom meeting.<br/><br/> Topic: Maths 1st Standard<br/> Time: Mar 18, 2021 05:00 PM India<br/> Every day, until Mar 24, 2021, 7 occurrence(s)<br/> Mar 18, 2021 05:00 PM<br/> Mar 19, 2021 05:00 PM<br/> Mar 20, 2021 05:00 PM<br/>Mar 21, 2021 05:00 PM<br/>Mar 22, 2021 05:00 PM<br/> Mar 23, 2021 05:00 PM<br/>Mar 24, 2021 05:00 PM<br/>Please download and import the following iCalendar (.ics) files to your calendar system.<br/>Daily: https://zoom.us/meeting/tJ0odeiprTsoH9xsSqtUIZA3mJRPbdNUPE_K/ics?icsToken=98tyKuChqzkrG9eVshyPRox5GYjod-vztmJBgvpFjyz0FxV6WCKlO8hwArB7Pu3g<br/><br/> Join Zoom Meeting<br/> https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09<br/><br/> Meeting ID: 995 2113 0258<br/>Passcode: 5Y4eZ1<br/><br/> ",
+            "enddate": "2021-04-01T18:00:00",
+            "id": "evt-usr-postpaidtutorsadmin-2021-04-01T17:30:00-1615122683599",
+            "organizeruserid": "usr-postpaidtutorsadmin",
+            "hostuserid": {
+                "0": {
+                  "email": "",
+                  "label": "",
+                  "name": "",
+                  "phone": ""
+                }
+              },
+            "orgname": "postpaidtutors",
+            "startdate": "2021-04-01T17:30:00",
+            "subject": "Maths 2nd Standard",
+            "defaultdatafilter": {  "subject" : "maths" , "class":"second" },
+            "type": "zoommeet",
+            "recurrency":{"isrecurring":"true","type":"daily", "startdate":"2021-04-01T00:00:00", "enddate":"2021-04-31T00:00:00"},
+            "internetaccessdata":{"meetingid":"995 2113 0258", "url":"https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09", "passcode":"5Y4eZ1"},
+            "phoneaccessdata":{"dialnumber":"", "dialpasscode":""},
+            "locationdata":{"fulladdress":"","gocode":""}
+          },
+          {
+            "attendeeuserid": {
+              "0": {
+                "email": "",
+                "label": "",
+                "name": "",
+                "phone": ""
+              }
+            },
+            "body": "Postpaid Tutors Admin is inviting you to a scheduled Zoom meeting.<br/><br/> Topic: Maths 1st Standard<br/> Time: Mar 18, 2021 05:00 PM India<br/> Every day, until Mar 24, 2021, 7 occurrence(s)<br/> Mar 18, 2021 05:00 PM<br/> Mar 19, 2021 05:00 PM<br/> Mar 20, 2021 05:00 PM<br/>Mar 21, 2021 05:00 PM<br/>Mar 22, 2021 05:00 PM<br/> Mar 23, 2021 05:00 PM<br/>Mar 24, 2021 05:00 PM<br/>Please download and import the following iCalendar (.ics) files to your calendar system.<br/>Daily: https://zoom.us/meeting/tJ0odeiprTsoH9xsSqtUIZA3mJRPbdNUPE_K/ics?icsToken=98tyKuChqzkrG9eVshyPRox5GYjod-vztmJBgvpFjyz0FxV6WCKlO8hwArB7Pu3g<br/><br/> Join Zoom Meeting<br/> https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09<br/><br/> Meeting ID: 995 2113 0258<br/>Passcode: 5Y4eZ1<br/><br/> ",
+            "enddate": "2021-04-01T18:30:00",
+            "id": "evt-usr-postpaidtutorsadmin-2021-04-01T18:00:00-1615122683599",
+            "organizeruserid": "usr-postpaidtutorsadmin",
+            "hostuserid": {
+                "0": {
+                  "email": "",
+                  "label": "",
+                  "name": "",
+                  "phone": ""
+                }
+              },
+            "orgname": "postpaidtutors",
+            "startdate": "2021-04-01T18:00:00",
+            "subject": "Maths 3rd Standard",
+            "defaultdatafilter": {  "subject" : "maths" , "class":"third" },
+            "type": "zoommeet",
+            "recurrency":{"isrecurring":"true","type":"daily", "startdate":"2021-04-01T00:00:00", "enddate":"2021-04-31T00:00:00"},
+            "internetaccessdata":{"meetingid":"995 2113 0258", "url":"https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09", "passcode":"5Y4eZ1"},
+            "phoneaccessdata":{"dialnumber":"", "dialpasscode":""},
+            "locationdata":{"fulladdress":"","gocode":""}
+          },
+          {
+            "attendeeuserid": {
+              "0": {
+                "email": "",
+                "label": "",
+                "name": "",
+                "phone": ""
+              }
+            },
+            "body": "Postpaid Tutors Admin is inviting you to a scheduled Zoom meeting.<br/><br/> Topic: Maths 1st Standard<br/> Time: Mar 18, 2021 05:00 PM India<br/> Every day, until Mar 24, 2021, 7 occurrence(s)<br/> Mar 18, 2021 05:00 PM<br/> Mar 19, 2021 05:00 PM<br/> Mar 20, 2021 05:00 PM<br/>Mar 21, 2021 05:00 PM<br/>Mar 22, 2021 05:00 PM<br/> Mar 23, 2021 05:00 PM<br/>Mar 24, 2021 05:00 PM<br/>Please download and import the following iCalendar (.ics) files to your calendar system.<br/>Daily: https://zoom.us/meeting/tJ0odeiprTsoH9xsSqtUIZA3mJRPbdNUPE_K/ics?icsToken=98tyKuChqzkrG9eVshyPRox5GYjod-vztmJBgvpFjyz0FxV6WCKlO8hwArB7Pu3g<br/><br/> Join Zoom Meeting<br/> https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09<br/><br/> Meeting ID: 995 2113 0258<br/>Passcode: 5Y4eZ1<br/><br/> ",
+            "enddate": "2021-04-01T19:00:00",
+            "id": "evt-usr-postpaidtutorsadmin-2021-04-01T18:30:00-1615122683599",
+            "organizeruserid": "usr-postpaidtutorsadmin",
+            "hostuserid": {
+                "0": {
+                  "email": "",
+                  "label": "",
+                  "name": "",
+                  "phone": ""
+                }
+              },
+            "orgname": "postpaidtutors",
+            "startdate": "2021-04-01T18:30:00",
+            "subject": "Maths 4Th Standard",
+            "defaultdatafilter": {  "subject" : "maths" , "class":"fourth" },
+            "type": "zoommeet",
+            "recurrency":{"isrecurring":"true","type":"daily", "startdate":"2021-04-01T00:00:00", "enddate":"2021-04-31T00:00:00"},
+            "internetaccessdata":{"meetingid":"995 2113 0258", "url":"https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09", "passcode":"5Y4eZ1"},
+            "phoneaccessdata":{"dialnumber":"", "dialpasscode":""},
+            "locationdata":{"fulladdress":"","gocode":""}
+          },
+          {
+            "attendeeuserid": {
+              "0": {
+                "email": "",
+                "label": "",
+                "name": "",
+                "phone": ""
+              }
+            },
+            "body": "Postpaid Tutors Admin is inviting you to a scheduled Zoom meeting.<br/><br/> Topic: Maths 1st Standard<br/> Time: Mar 18, 2021 05:00 PM India<br/> Every day, until Mar 24, 2021, 7 occurrence(s)<br/> Mar 18, 2021 05:00 PM<br/> Mar 19, 2021 05:00 PM<br/> Mar 20, 2021 05:00 PM<br/>Mar 21, 2021 05:00 PM<br/>Mar 22, 2021 05:00 PM<br/> Mar 23, 2021 05:00 PM<br/>Mar 24, 2021 05:00 PM<br/>Please download and import the following iCalendar (.ics) files to your calendar system.<br/>Daily: https://zoom.us/meeting/tJ0odeiprTsoH9xsSqtUIZA3mJRPbdNUPE_K/ics?icsToken=98tyKuChqzkrG9eVshyPRox5GYjod-vztmJBgvpFjyz0FxV6WCKlO8hwArB7Pu3g<br/><br/> Join Zoom Meeting<br/> https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09<br/><br/> Meeting ID: 995 2113 0258<br/>Passcode: 5Y4eZ1<br/><br/> ",
+            "enddate": "2021-04-01T18:30:00",
+            "id": "evt-usr-postpaidtutorsadmin-2021-04-01T18:00:00-1615122683599",
+            "organizeruserid": "usr-postpaidtutorsadmin",
+            "hostuserid": {
+                "0": {
+                  "email": "",
+                  "label": "",
+                  "name": "",
+                  "phone": ""
+                }
+              },
+            "orgname": "postpaidtutors",
+            "startdate": "2021-04-01T18:00:00",
+            "subject": "Maths 5th Standard",
+            "defaultdatafilter": {  "subject" : "maths" , "class":"fifth" },
+            "type": "zoommeet",
+            "recurrency":{"isrecurring":"true","type":"daily", "startdate":"2021-04-01T00:00:00", "enddate":"2021-04-31T00:00:00"},
+            "internetaccessdata":{"meetingid":"995 2113 0258", "url":"https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09", "passcode":"5Y4eZ1"},
+            "phoneaccessdata":{"dialnumber":"", "dialpasscode":""},
+            "locationdata":{"fulladdress":"","gocode":""}
+          },
+          {
+            "attendeeuserid": {
+              "0": {
+                "email": "",
+                "label": "",
+                "name": "",
+                "phone": ""
+              }
+            },
+            "body": "Postpaid Tutors Admin is inviting you to a scheduled Zoom meeting.<br/><br/> Topic: Maths 1st Standard<br/> Time: Mar 18, 2021 05:00 PM India<br/> Every day, until Mar 24, 2021, 7 occurrence(s)<br/> Mar 18, 2021 05:00 PM<br/> Mar 19, 2021 05:00 PM<br/> Mar 20, 2021 05:00 PM<br/>Mar 21, 2021 05:00 PM<br/>Mar 22, 2021 05:00 PM<br/> Mar 23, 2021 05:00 PM<br/>Mar 24, 2021 05:00 PM<br/>Please download and import the following iCalendar (.ics) files to your calendar system.<br/>Daily: https://zoom.us/meeting/tJ0odeiprTsoH9xsSqtUIZA3mJRPbdNUPE_K/ics?icsToken=98tyKuChqzkrG9eVshyPRox5GYjod-vztmJBgvpFjyz0FxV6WCKlO8hwArB7Pu3g<br/><br/> Join Zoom Meeting<br/> https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09<br/><br/> Meeting ID: 995 2113 0258<br/>Passcode: 5Y4eZ1<br/><br/> ",
+            "enddate": "2021-04-01T18:30:00",
+            "id": "evt-usr-postpaidtutorsadmin-2021-04-01T18:00:00-1615122683599",
+            "organizeruserid": "usr-postpaidtutorsadmin",
+            "hostuserid": {
+                "0": {
+                  "email": "",
+                  "label": "",
+                  "name": "",
+                  "phone": ""
+                }
+              },
+            "orgname": "postpaidtutors",
+            "startdate": "2021-04-01T18:00:00",
+            "subject": "Maths 6th Standard",
+            "defaultdatafilter": {  "subject" : "maths" , "class":"sixth" },
+            "type": "zoommeet",
+            "recurrency":{"isrecurring":"true","type":"daily", "startdate":"2021-04-01T00:00:00", "enddate":"2021-04-31T00:00:00"},
+            "internetaccessdata":{"meetingid":"995 2113 0258", "url":"https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09", "passcode":"5Y4eZ1"},
+            "phoneaccessdata":{"dialnumber":"", "dialpasscode":""},
+            "locationdata":{"fulladdress":"","gocode":""}
+          },
+          {
+            "attendeeuserid": {
+              "0": {
+                "email": "",
+                "label": "",
+                "name": "",
+                "phone": ""
+              }
+            },
+            "body": "Postpaid Tutors Admin is inviting you to a scheduled Zoom meeting.<br/><br/> Topic: Maths 1st Standard<br/> Time: Mar 18, 2021 05:00 PM India<br/> Every day, until Mar 24, 2021, 7 occurrence(s)<br/> Mar 18, 2021 05:00 PM<br/> Mar 19, 2021 05:00 PM<br/> Mar 20, 2021 05:00 PM<br/>Mar 21, 2021 05:00 PM<br/>Mar 22, 2021 05:00 PM<br/> Mar 23, 2021 05:00 PM<br/>Mar 24, 2021 05:00 PM<br/>Please download and import the following iCalendar (.ics) files to your calendar system.<br/>Daily: https://zoom.us/meeting/tJ0odeiprTsoH9xsSqtUIZA3mJRPbdNUPE_K/ics?icsToken=98tyKuChqzkrG9eVshyPRox5GYjod-vztmJBgvpFjyz0FxV6WCKlO8hwArB7Pu3g<br/><br/> Join Zoom Meeting<br/> https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09<br/><br/> Meeting ID: 995 2113 0258<br/>Passcode: 5Y4eZ1<br/><br/> ",
+            "enddate": "2021-04-01T18:30:00",
+            "id": "evt-usr-postpaidtutorsadmin-2021-04-01T18:00:00-1615122683599",
+            "organizeruserid": "usr-postpaidtutorsadmin",
+            "hostuserid": {
+                "0": {
+                  "email": "",
+                  "label": "",
+                  "name": "",
+                  "phone": ""
+                }
+              },
+            "orgname": "postpaidtutors",
+            "startdate": "2021-04-01T18:00:00",
+            "subject": "Maths 7th Standard",
+            "defaultdatafilter": {  "subject" : "maths" , "class":"seventh" },
+            "type": "zoommeet",
+            "recurrency":{"isrecurring":"true","type":"daily", "startdate":"2021-04-01T00:00:00", "enddate":"2021-04-31T00:00:00"},
+            "internetaccessdata":{"meetingid":"995 2113 0258", "url":"https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09", "passcode":"5Y4eZ1"},
+            "phoneaccessdata":{"dialnumber":"", "dialpasscode":""},
+            "locationdata":{"fulladdress":"","gocode":""}
+          },
+          {
+            "attendeeuserid": {
+              "0": {
+                "email": "",
+                "label": "",
+                "name": "",
+                "phone": ""
+              }
+            },
+            "body": "Postpaid Tutors Admin is inviting you to a scheduled Zoom meeting.<br/><br/> Topic: Maths 1st Standard<br/> Time: Mar 18, 2021 05:00 PM India<br/> Every day, until Mar 24, 2021, 7 occurrence(s)<br/> Mar 18, 2021 05:00 PM<br/> Mar 19, 2021 05:00 PM<br/> Mar 20, 2021 05:00 PM<br/>Mar 21, 2021 05:00 PM<br/>Mar 22, 2021 05:00 PM<br/> Mar 23, 2021 05:00 PM<br/>Mar 24, 2021 05:00 PM<br/>Please download and import the following iCalendar (.ics) files to your calendar system.<br/>Daily: https://zoom.us/meeting/tJ0odeiprTsoH9xsSqtUIZA3mJRPbdNUPE_K/ics?icsToken=98tyKuChqzkrG9eVshyPRox5GYjod-vztmJBgvpFjyz0FxV6WCKlO8hwArB7Pu3g<br/><br/> Join Zoom Meeting<br/> https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09<br/><br/> Meeting ID: 995 2113 0258<br/>Passcode: 5Y4eZ1<br/><br/> ",
+            "enddate": "2021-04-01T18:30:00",
+            "id": "evt-usr-postpaidtutorsadmin-2021-04-01T18:00:00-1615122683599",
+            "organizeruserid": "usr-postpaidtutorsadmin",
+            "hostuserid": {
+                "0": {
+                  "email": "",
+                  "label": "",
+                  "name": "",
+                  "phone": ""
+                }
+              },
+            "orgname": "postpaidtutors",
+            "startdate": "2021-04-01T18:00:00",
+            "subject": "Maths 8th Standard",
+            "defaultdatafilter": {  "subject" : "maths" , "class":"eighth" },
+            "type": "zoommeet",
+            "recurrency":{"isrecurring":"true","type":"daily", "startdate":"2021-04-01T00:00:00", "enddate":"2021-04-31T00:00:00"},
+            "internetaccessdata":{"meetingid":"995 2113 0258", "url":"https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09", "passcode":"5Y4eZ1"},
+            "phoneaccessdata":{"dialnumber":"", "dialpasscode":""},
+            "locationdata":{"fulladdress":"","gocode":""}
+          },
+          {
+            "attendeeuserid": {
+              "0": {
+                "email": "",
+                "label": "",
+                "name": "",
+                "phone": ""
+              }
+            },
+            "body": "Postpaid Tutors Admin is inviting you to a scheduled Zoom meeting.<br/><br/> Topic: Maths 1st Standard<br/> Time: Mar 18, 2021 05:00 PM India<br/> Every day, until Mar 24, 2021, 7 occurrence(s)<br/> Mar 18, 2021 05:00 PM<br/> Mar 19, 2021 05:00 PM<br/> Mar 20, 2021 05:00 PM<br/>Mar 21, 2021 05:00 PM<br/>Mar 22, 2021 05:00 PM<br/> Mar 23, 2021 05:00 PM<br/>Mar 24, 2021 05:00 PM<br/>Please download and import the following iCalendar (.ics) files to your calendar system.<br/>Daily: https://zoom.us/meeting/tJ0odeiprTsoH9xsSqtUIZA3mJRPbdNUPE_K/ics?icsToken=98tyKuChqzkrG9eVshyPRox5GYjod-vztmJBgvpFjyz0FxV6WCKlO8hwArB7Pu3g<br/><br/> Join Zoom Meeting<br/> https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09<br/><br/> Meeting ID: 995 2113 0258<br/>Passcode: 5Y4eZ1<br/><br/> ",
+            "enddate": "2021-04-01T18:30:00",
+            "id": "evt-usr-postpaidtutorsadmin-2021-04-01T18:00:00-1615122683599",
+            "organizeruserid": "usr-postpaidtutorsadmin",
+            "hostuserid": {
+                "0": {
+                  "email": "",
+                  "label": "",
+                  "name": "",
+                  "phone": ""
+                }
+              },
+            "orgname": "postpaidtutors",
+            "startdate": "2021-04-01T18:00:00",
+            "subject": "Maths 9th Standard",
+            "defaultdatafilter": {  "subject" : "maths" , "class":"nineth" },
+            "type": "zoommeet",
+            "recurrency":{"isrecurring":"true","type":"daily", "startdate":"2021-04-01T00:00:00", "enddate":"2021-04-31T00:00:00"},
+            "internetaccessdata":{"meetingid":"995 2113 0258", "url":"https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09", "passcode":"5Y4eZ1"},
+            "phoneaccessdata":{"dialnumber":"", "dialpasscode":""},
+            "locationdata":{"fulladdress":"","gocode":""}
+          },
+          {
+            "attendeeuserid": {
+              "0": {
+                "email": "",
+                "label": "",
+                "name": "",
+                "phone": ""
+              }
+            },
+            "body": "Postpaid Tutors Admin is inviting you to a scheduled Zoom meeting.<br/><br/> Topic: Maths 1st Standard<br/> Time: Mar 18, 2021 05:00 PM India<br/> Every day, until Mar 24, 2021, 7 occurrence(s)<br/> Mar 18, 2021 05:00 PM<br/> Mar 19, 2021 05:00 PM<br/> Mar 20, 2021 05:00 PM<br/>Mar 21, 2021 05:00 PM<br/>Mar 22, 2021 05:00 PM<br/> Mar 23, 2021 05:00 PM<br/>Mar 24, 2021 05:00 PM<br/>Please download and import the following iCalendar (.ics) files to your calendar system.<br/>Daily: https://zoom.us/meeting/tJ0odeiprTsoH9xsSqtUIZA3mJRPbdNUPE_K/ics?icsToken=98tyKuChqzkrG9eVshyPRox5GYjod-vztmJBgvpFjyz0FxV6WCKlO8hwArB7Pu3g<br/><br/> Join Zoom Meeting<br/> https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09<br/><br/> Meeting ID: 995 2113 0258<br/>Passcode: 5Y4eZ1<br/><br/> ",
+            "enddate": "2021-04-01T18:30:00",
+            "id": "evt-usr-postpaidtutorsadmin-2021-04-01T18:00:00-1615122683599",
+            "organizeruserid": "usr-postpaidtutorsadmin",
+            "hostuserid": {
+                "0": {
+                  "email": "",
+                  "label": "",
+                  "name": "",
+                  "phone": ""
+                }
+              },
+            "orgname": "postpaidtutors",
+            "startdate": "2021-04-01T18:00:00",
+            "subject": "Maths 10th Standard",
+            "defaultdatafilter": {  "subject" : "maths" , "class":"tenth" },
+            "type": "zoommeet",
+            "recurrency":{"isrecurring":"true","type":"daily", "startdate":"2021-04-01T00:00:00", "enddate":"2021-04-31T00:00:00"},
+            "internetaccessdata":{"meetingid":"995 2113 0258", "url":"https://zoom.us/j/99521130258?pwd=SDUwOTY4ZDM0V1lCOTl1c00wT1FTUT09", "passcode":"5Y4eZ1"},
+            "phoneaccessdata":{"dialnumber":"", "dialpasscode":""},
+            "locationdata":{"fulladdress":"","gocode":""}
+          }
+         
+     
+          
+      ]}
+}

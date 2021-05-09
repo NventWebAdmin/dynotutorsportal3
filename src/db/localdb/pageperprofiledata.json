@@ -1,0 +1,178 @@
+{
+    "localdbdata":{"data":[
+       
+      {
+        "actionname": "listnview",
+        "appname": "learnercentral",
+        "dataprops": {
+          "components": {
+            "classrecorddatalist": {
+              "componentname": "recorddatalist",
+              "compprops": {
+                "datadisplaytype": {
+                  "name": "",
+                  "type": "text",
+                  "value": "table"
+                },
+                "orgname": {
+                  "name": "orgname",
+                  "type": "localdata",
+                  "value": ""
+                },
+                "parentrecid": {
+                  "name": "parentrecid",
+                  "type": "text",
+                  "value": ""
+                },
+                "parenttablename": {
+                  "name": "parenttablename",
+                  "type": "text",
+                  "value": ""
+                },
+                "tablename": {
+                  "name": "",
+                  "type": "text",
+                  "value": "lesson"
+                },
+                "userid": {
+                  "name": "userid",
+                  "type": "localdata",
+                  "value": ""
+                },
+                "userprofileid": {
+                  "name": "userprofileid",
+                  "type": "localdata",
+                  "value": ""
+                },
+                "viewname": {
+                  "name": "viewname",
+                  "type": "localdata",
+                  "value": ""
+                }
+              },
+              "htmlid": "listnvieweditmylessonrecorddatalistcomp",
+              "order": "1",
+              "styleprops": {
+                "backgroundColor": {
+                  "name": "backgroundColor",
+                  "type": "text",
+                  "value": ""
+                },
+                "height": {
+                  "name": "height",
+                  "type": "text",
+                  "value": ""
+                },
+                "overflow": {
+                  "name": "overflow",
+                  "type": "text",
+                  "value": "auto"
+                },
+                "width": {
+                  "name": "width",
+                  "type": "text",
+                  "value": "100%"
+                }
+              }
+            },
+            "classrecordtabpanel": {
+              "componentname": "closeicontabpanel",
+              "compprops": {
+                "actionname": {
+                  "name": "actionname",
+                  "type": "localdata",
+                  "value": ""
+                },
+                "lastcloseiconactionid": {
+                  "name": "",
+                  "type": "text",
+                  "value": "listnview-recordtabpanel-lasttabcloseicon"
+                },
+                "listnviewhomeactionid": {
+                  "name": "",
+                  "type": "text",
+                  "value": "listnview-recordtabpanel-listnviewhome"
+                },
+                "orgname": {
+                  "name": "orgname",
+                  "type": "localdata",
+                  "value": ""
+                },
+                "parentrecid": {
+                  "name": "parentrecid",
+                  "type": "text",
+                  "value": ""
+                },
+                "parenttablename": {
+                  "name": "parenttablename",
+                  "type": "text",
+                  "value": ""
+                },
+                "recordid": {
+                  "name": "recordid",
+                  "type": "localdata",
+                  "value": ""
+                },
+                "tabactionid": {
+                  "name": "",
+                  "type": "text",
+                  "value": "listnview-recordtabpanel-tabname"
+                },
+                "tablename": {
+                  "name": "tablename",
+                  "type": "text",
+                  "value": "lesson"
+                },
+                "urlsearchparams": {
+                  "name": "urlsearchparams",
+                  "type": "localdata",
+                  "value": ""
+                },
+                "userid": {
+                  "name": "userid",
+                  "type": "localdata",
+                  "value": ""
+                },
+                "userprofileid": {
+                  "name": "userprofileid",
+                  "type": "localdata",
+                  "value": ""
+                }
+              },
+              "htmlid": "listnviewlessonrecordtabpanelcomp",
+              "order": "0",
+              "styleprops": {
+                "backgroundColor": {
+                  "name": "backgroundColor",
+                  "type": "text",
+                  "value": ""
+                },
+                "height": {
+                  "name": "height",
+                  "type": "text",
+                  "value": ""
+                },
+                "overflow": {
+                  "name": "overflow",
+                  "type": "text",
+                  "value": "auto"
+                },
+                "width": {
+                  "name": "width",
+                  "type": "text",
+                  "value": "100%"
+                }
+              }
+            }
+          }
+        },
+        "id": "PP-learner-learnercentral-lesson-listnview",
+        "maintabname": "mylessons",
+        "orgname": "preply",
+        "sidetabname": "alllessons"
+      }
+         
+     
+          
+      ]}
+}
