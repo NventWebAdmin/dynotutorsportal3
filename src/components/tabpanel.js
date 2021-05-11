@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   sortArray,
-  fieldTypeHtmltoDBmapping,
+  //fieldTypeHtmltoDBmapping,
   getLocalData,
   serverButtonHandler,
 } from "../js/index";
@@ -15,7 +15,7 @@ export default class F extends React.Component {
   componentDidMount() {
     console.log(this.props);
     let { tabs, activetab, defaultactivetab } = this.props.compprops;
-    if (activetab == "" || activetab == undefined) {
+    if (activetab === "" || activetab === undefined) {
       activetab = defaultactivetab;
     }
     this.setComponentData(tabs, activetab);
@@ -28,7 +28,7 @@ export default class F extends React.Component {
     console.log(dataprops);
     let activeTabName = activetab;
     let activeTabNamefromState = this.state.activeTabNamefromState;
-    if (activeTabNamefromState != "") {
+    if (activeTabNamefromState !== "") {
       activeTabName = activeTabNamefromState;
     }
     let datapropsarray = [];
@@ -38,13 +38,13 @@ export default class F extends React.Component {
     }
     datapropsarraysorted = sortArray(datapropsarray, "order", "integer");
 
-    if (activeTabName == "" || activeTabName == undefined) {
+    if (activeTabName === "" || activeTabName === undefined) {
       activeTabName = datapropsarraysorted[0].name;
     }
 
     for (let i = 0; i < datapropsarraysorted.length; i++) {
       console.log(datapropsarraysorted[i]);
-      if (datapropsarraysorted[i].name == activeTabName) {
+      if (datapropsarraysorted[i].name === activeTabName) {
         tabsHtml.push(
           <div
             className="sp activeblack"

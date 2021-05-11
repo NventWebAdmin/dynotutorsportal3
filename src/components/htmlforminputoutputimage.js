@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   getImageRecordsStorage,
   createImageRecordStorage,
@@ -32,16 +32,17 @@ export default class F extends React.Component {
       fileEvent: "",
       callback: (result) => {
         console.log(result);
-        if (result.isSuccess == "true") {
+        if (result.isSuccess === "true") {
           // this.getHtmlInputImage({ imghtmlid: "photo1" });
         } else {
         }
       },
     });
+    console.log(result);
   };
 
   inputimageradiochange = async (e) => {
-    if (e.target.value == "fromlocal") {
+    if (e.target.value === "fromlocal") {
       this.stopStreamedVideo();
       this.setState({
         showFromLocal: true,
@@ -50,7 +51,7 @@ export default class F extends React.Component {
         showpreviewImagePanel: true,
       });
     }
-    if (e.target.value == "fromlibrary") {
+    if (e.target.value === "fromlibrary") {
       this.stopStreamedVideo();
       this.setState({
         showFromLocal: false,
@@ -60,7 +61,7 @@ export default class F extends React.Component {
       });
       this.getLibrayData();
     }
-    if (e.target.value == "fromcamera") {
+    if (e.target.value === "fromcamera") {
       //  this.stopStreamedVideo();
       this.setState(
         {
@@ -98,7 +99,7 @@ export default class F extends React.Component {
       fileEvent: "",
       callback: (result) => {
         console.log(result);
-        if (result.isSuccess == "true") {
+        if (result.isSuccess === "true") {
           console.log(result.dataprops.fileNames);
           let libraryOptions = [];
           for (let i in result.dataprops.fileNames) {
@@ -149,7 +150,7 @@ export default class F extends React.Component {
     console.log(this.props.previewImageHtmlId);
     console.log(previewImageHtml);
 
-    if (ds.type == "fromlocal") {
+    if (ds.type === "fromlocal") {
       console.log(e.target.files);
       let file = e.target.files[0];
       previewImageHtml.file = file;
@@ -161,13 +162,13 @@ export default class F extends React.Component {
       })(previewImageHtml);
       reader.readAsDataURL(file);
     }
-    if (ds.type == "fromlibrary") {
+    if (ds.type === "fromlibrary") {
       console.log(e.target.value);
-      if (e.target.value != "") {
+      if (e.target.value !== "") {
         this.getImageData(e.target.value);
       }
     }
-    if (ds.type == "fromcamera") {
+    if (ds.type === "fromcamera") {
       let width = 640;
       let height = 480;
       console.log(width);
@@ -194,7 +195,7 @@ export default class F extends React.Component {
       fileEvent: "",
       callback: (result) => {
         console.log(result);
-        if (result.isSuccess == "true") {
+        if (result.isSuccess === "true") {
           console.log(result.dataprops.imgsrc);
           previewImageHtml.src = result.dataprops.imgsrc;
         } else {
@@ -204,7 +205,7 @@ export default class F extends React.Component {
   };
   getImageDataViewPanel = async () => {
     let imageHtml = document.getElementById(this.props.imageHtmlId);
-    if (this.props.isInputnotOuptut == "false") {
+    if (this.props.isInputnotOuptut === "false") {
       getImageRecordStorage({
         folderUrl: this.props.folderUrl,
         fileName: this.props.fileName,
@@ -213,7 +214,7 @@ export default class F extends React.Component {
         fileEvent: "",
         callback: (result) => {
           console.log(result);
-          if (result.isSuccess == "true") {
+          if (result.isSuccess === "true") {
             console.log(result.dataprops.imgsrc);
             imageHtml.src = result.dataprops.imgsrc;
           } else {
@@ -231,11 +232,11 @@ export default class F extends React.Component {
     console.log(previewImageHtml.style.transform);
     console.log(previewImageHtml.src);
 
-    // if (previewImageHtml.style.transform == "rotate(90deg)") {
+    // if (previewImageHtml.style.transform === "rotate(90deg)") {
     //   previewImageHtml.style.transform = "rotate(180deg)";
-    // } else if (previewImageHtml.style.transform == "rotate(180deg)") {
+    // } else if (previewImageHtml.style.transform === "rotate(180deg)") {
     //   previewImageHtml.style.transform = "rotate(270deg)";
-    // } else if (previewImageHtml.style.transform == "rotate(270deg)") {
+    // } else if (previewImageHtml.style.transform === "rotate(270deg)") {
     //   previewImageHtml.style.transform = "rotate(360deg)";
     // } else {
     //   previewImageHtml.style.transform = "rotate(90deg)";
@@ -301,7 +302,7 @@ export default class F extends React.Component {
       previewVideoHtmlId,
     } = this.props;
     console.log(this.props);
-    if (showEditImagePanel == "true") {
+    if (showEditImagePanel === "true") {
       isInputnotOuptut = "true";
     }
 
@@ -343,7 +344,7 @@ export default class F extends React.Component {
           </div>
           <div className=" org-flexbasis-100p org-mflexbasis-40p org-lflexbasis-40p  ">
             {/* file upload */}
-            {showFromLocal == true ? (
+            {showFromLocal === true ? (
               <div>
                 <input
                   data-type="fromlocal"
@@ -356,7 +357,7 @@ export default class F extends React.Component {
               ""
             )}
 
-            {showFromLibrary == true ? (
+            {showFromLibrary === true ? (
               <div>
                 <select
                   data-type="fromlibrary"
@@ -376,7 +377,7 @@ export default class F extends React.Component {
               ""
             )}
 
-            {showFromCamera == true ? (
+            {showFromCamera === true ? (
               <div>
                 <div data-type="fromcamera" onClick={this.inputimageselect}>
                   take pic
@@ -388,14 +389,14 @@ export default class F extends React.Component {
             )}
           </div>
           <div className=" org-flexbasis-100p org-mflexbasis-40p org-lflexbasis-40p  ">
-            {showpreviewImagePanel == true ? (
+            {showpreviewImagePanel === true ? (
               <div className="org-fr org-fai-s" style={{ width: "100%" }}>
                 <div className="org-fr ">
                   <div onClick={this.editPriviewImage}>Rotate</div>
                   <div onClick={this.editPriviewImage}>Filter</div>
                   <div onClick={this.uploadPriviewImage}>Upload</div>
                 </div>
-                <img id={previewImageHtmlId} width="100%"></img>
+                <img id={previewImageHtmlId} width="100%" alt="img"></img>
               </div>
             ) : (
               ""
@@ -417,7 +418,7 @@ export default class F extends React.Component {
 
     return (
       <>
-        {showEditImagePanelModal == true ? (
+        {showEditImagePanelModal === true ? (
           <>
             <Svgcomp
               modalbody={{ text: modalbodytext }}
@@ -429,7 +430,7 @@ export default class F extends React.Component {
         ) : (
           ""
         )}
-        {isInputnotOuptut == "true" ? (
+        {isInputnotOuptut === "true" ? (
           <div className="org-fr org-fai-s  ">
             <div className=" org-flexbasis-100p org-mflexbasis-20p org-lflexbasis-20p  ">
               <div className="org-fr org-fai-c ">
@@ -463,7 +464,7 @@ export default class F extends React.Component {
             </div>
             <div className=" org-flexbasis-100p org-mflexbasis-40p org-lflexbasis-40p  ">
               {/* file upload */}
-              {showFromLocal == true ? (
+              {showFromLocal === true ? (
                 <div>
                   <input
                     data-type="fromlocal"
@@ -476,7 +477,7 @@ export default class F extends React.Component {
                 ""
               )}
 
-              {showFromLibrary == true ? (
+              {showFromLibrary === true ? (
                 <div>
                   <select
                     data-type="fromlibrary"
@@ -496,7 +497,7 @@ export default class F extends React.Component {
                 ""
               )}
 
-              {showFromCamera == true ? (
+              {showFromCamera === true ? (
                 <div>
                   <div data-type="fromcamera" onClick={this.inputimageselect}>
                     take pic
@@ -508,14 +509,14 @@ export default class F extends React.Component {
               )}
             </div>
             <div className=" org-flexbasis-100p org-mflexbasis-40p org-lflexbasis-40p  ">
-              {showpreviewImagePanel == true ? (
+              {showpreviewImagePanel === true ? (
                 <div className="org-fr org-fai-s" style={{ width: "100%" }}>
                   <div className="org-fr ">
                     <div onClick={this.editPriviewImage}>Rotate</div>
                     <div onClick={this.editPriviewImage}>Filter</div>
                     <div onClick={this.uploadPriviewImage}>Upload</div>
                   </div>
-                  <img id={previewImageHtmlId} width="100%"></img>
+                  <img id={previewImageHtmlId} width="100%" alt="img"></img>
                 </div>
               ) : (
                 ""
@@ -529,7 +530,7 @@ export default class F extends React.Component {
                 <div className="org-fr ">
                   <div onClick={this.showEditImagePanelModal}>Edit</div>
                 </div>
-                <img id={imageHtmlId} width="100%"></img>
+                <img id={imageHtmlId} width="100%" alt="img"></img>
               </div>
             </div>
           </div>

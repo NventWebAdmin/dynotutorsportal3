@@ -39,6 +39,7 @@ class F extends Component {
       recordviewfieldname,
     } = this.props.compprops;
     console.log(this.props);
+    console.log(buttons);
     let mainpanelHtml = [];
     let tableHtml = [];
     let trrowHtml = [];

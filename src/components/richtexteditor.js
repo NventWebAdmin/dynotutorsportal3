@@ -25,7 +25,7 @@ class F extends Component {
 
     var table = document.createElement("table");
     for (let i = 0; i < this.state.nooftablerows; i++) {
-      var row = table.insertRow(i);
+      //  var row = table.insertRow(i);
       for (let j = 0; j < this.state.nooftablecolumnns; j++) {
         // var cell1 = row.insertCell(j);
       }
@@ -59,11 +59,11 @@ class F extends Component {
 
   render() {
     let {
-      createNote,
-      iscreateactive,
+      //   createNote,
+      //  iscreateactive,
       iseditactive,
       isdeleteactive,
-      isEdit,
+      // isEdit,
       action,
     } = this.props;
     //let { isEdit } = this.state;

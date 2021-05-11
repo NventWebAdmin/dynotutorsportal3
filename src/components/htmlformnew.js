@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Tabpanel from "./tabpanel";
-import Tablecomp from "./tablecomp";
+import Tablecomp from "./tablecomp2";
 import Htmlforminputoutputimage from "./htmlforminputoutputimage";
 import Htmlforminputoutputvideo from "./htmlforminputoutputvideo";
-import { GetLocalIcon, GetGoogleIcon } from "./icons";
+import { GetGoogleIcon } from "./icons";
 import { getDateDigitalDisplay, getMonthDigitalDisplay } from "../js/index";
 //import { sortArray, fieldTypeHtmltoDBmapping } from "../../js/index";
 
@@ -49,7 +49,7 @@ import { getDateDigitalDisplay, getMonthDigitalDisplay } from "../js/index";
 // dataprops={htmlfromprops}
 // style={{ width: "50%" }}
 // inputChanged={(e) => {
-//   console.log(e.target.dataset.name + "==" + e.target.value);
+//   console.log(e.target.dataset.name + "===" + e.target.value);
 // }}
 // />
 
@@ -59,7 +59,6 @@ class F extends Component {
     this.state = {
       activeTabNamefromState: "",
       inputexcelbody: [],
-      activeTabNamefromState: "",
       activeSectionNamefromState: "",
       activeSubsectionNamefromState: "",
     };
@@ -74,7 +73,7 @@ class F extends Component {
     //   fileEvent: "",
     //   callback: (result) => {
     //     console.log(result);
-    //     if (result.isSuccess == "true") {
+    //     if (result.isSuccess === "true") {
     //       console.log(result.dataprops.imgsrc);
     //       // document.getElementById(imghtmlid).src = result.dataprops.imgsrc;
     //     } else {
@@ -95,6 +94,7 @@ class F extends Component {
     // console.log(e.target.dataset);
     let validationpanelsections = e.target.dataset.validationpanel;
     let isValid = true;
+    console.log(validationpanelsections);
     // if (validationpanelsections) {
     //   let validationpanelsectionsArray = validationpanelsections.split("-");
     //   console.log(validationpanelsectionsArray);
@@ -107,14 +107,14 @@ class F extends Component {
 
     //     for (let j = 0; j < htmlsections.length; j++) {
     //       console.log(htmlsections[j]);
-    //       if (this.inputElementValidate(htmlsections[j]) == false) {
+    //       if (this.inputElementValidate(htmlsections[j]) === false) {
     //         isValid = false;
     //       }
     //     }
     //   }
     // }
     console.log(isValid);
-    if (isValid == true) {
+    if (isValid === true) {
       this.props.clkHandler({
         buttonLabel: e.target.dataset.label,
         buttonName: e.target.dataset.name,
@@ -151,14 +151,14 @@ class F extends Component {
 
         for (let j = 0; j < htmlsections.length; j++) {
           console.log(htmlsections[j]);
-          if (this.inputElementValidate(htmlsections[j]) == false) {
+          if (this.inputElementValidate(htmlsections[j]) === false) {
             isValid = false;
           }
         }
       }
     }
     console.log(isValid);
-    if (isValid == true) {
+    if (isValid === true) {
       // this.props.clkHandler({
       //   buttonLabel: e.target.dataset.label,
       //   buttonName: e.target.dataset.name,
@@ -170,7 +170,7 @@ class F extends Component {
   inputElementValidate = (htmllement) => {
     let isValid = true;
     if (htmllement && htmllement.required) {
-      if (htmllement.value.trim() == "" || htmllement.value == undefined) {
+      if (htmllement.value.trim() === "" || htmllement.value === undefined) {
         htmllement.style.borderBottomColor = "red";
         htmllement.style.borderBottomWidth = "2px";
         var newDiv = document.createElement("div");
@@ -190,15 +190,15 @@ class F extends Component {
   tabclkHandler = (props) => {
     let { tabLabel, tabName, tabType } = props;
     console.log(props);
-    if (tabType == "recorddata") {
+    if (tabType === "recorddata") {
       //  this.setState({ activeTabNamefromState: tabName });
       this.props.clkHandler({
         tabLabel: tabLabel,
         tabName: tabName,
         tabType: tabType,
       });
-    } else if (tabType == "recordlistdata") {
-    } else if (tabType == "recordrelatedlistdata") {
+    } else if (tabType === "recordlistdata") {
+    } else if (tabType === "recordrelatedlistdata") {
       this.props.clkHandler({
         tabLabel: tabLabel,
         tabName: tabName,
@@ -261,10 +261,10 @@ class F extends Component {
         let sheettoprocess = 0;
         for (let i in contents) {
           console.log(i);
-          if (sheettoprocess == 0) {
+          if (sheettoprocess === 0) {
             let excelSheetItemData = contents[i];
             for (let j = 0; j < excelSheetItemData.length; j++) {
-              if (j == 0) {
+              if (j === 0) {
                 // excel sheet header row
                 let excelSheetItemRowData = excelSheetItemData[0];
                 for (let k = 0; k < excelSheetItemRowData.length; k++) {
@@ -280,7 +280,7 @@ class F extends Component {
             console.log(tablecompcolumnmetadata);
             console.log(excelHeaderColumnArray);
             for (let j = 0; j < excelSheetItemData.length; j++) {
-              if (j != 0) {
+              if (j !== 0) {
                 // excel sheet header row
                 let excelSheetItemRowData = excelSheetItemData[j];
                 let tablecompcolumndataItem = {};
@@ -324,7 +324,7 @@ class F extends Component {
             recordData={tablecompcolumndata}
             activeTableviewName="student"
             tableName="student"
-            tablehtmlid={"student" + "upload"}
+            tablehtmlid={"studentupload"}
             rowhtmlid1="firstname"
             rowhtmlid2="lastname"
             clientstatename={clientstatename}
@@ -346,8 +346,9 @@ class F extends Component {
     });
 
     var firstSheet = workbook.SheetNames[0];
-    var data = this.to_json(workbook);
-    return data;
+    console.log(firstSheet);
+    var data2 = this.to_json(workbook);
+    return data2;
   };
 
   to_json = (workbook) => {
@@ -390,6 +391,7 @@ class F extends Component {
 
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           style={{
             width: htmlFormItem.width,
             display: "inline-block",
@@ -435,6 +437,7 @@ class F extends Component {
       }
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           style={{
             width: htmlFormItem.width,
             height: htmlFormItem.height,
@@ -449,7 +452,10 @@ class F extends Component {
     }
     if (htmlFormItem.type === "headertext") {
       htmlFormArray.push(
-        <div style={{ width: htmlFormItem.width, height: htmlFormItem.height }}>
+        <div
+          key={htmlFormItem.name}
+          style={{ width: htmlFormItem.width, height: htmlFormItem.height }}
+        >
           <div className="org-datainputlabel mf">{htmlFormItem.label}</div>
         </div>
       );
@@ -469,6 +475,7 @@ class F extends Component {
       htmlFormArray.push(
         <div style={{ width: htmlFormItem.width }}>
           <div
+            key={htmlFormItem.name}
             className={subheaderclass}
             style={{ backgroundColor: "#717171", opacity: "0.5" }}
             data-name={htmlFormItem.name}
@@ -487,6 +494,7 @@ class F extends Component {
     if (htmlFormItem.type === "ouputlabel") {
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection"
           style={{
             width: htmlFormItem.width,
@@ -509,6 +517,7 @@ class F extends Component {
     if (htmlFormItem.type === "link") {
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           style={{
             width: htmlFormItem.width,
             height: htmlFormItem.height,
@@ -532,6 +541,7 @@ class F extends Component {
     if (htmlFormItem.type === "inputexcel") {
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection esp"
           style={{
             width: htmlFormItem.width,
@@ -539,7 +549,7 @@ class F extends Component {
             display: "inline-block",
           }}
         >
-          {htmlFormItem.hidelabel == true ? (
+          {htmlFormItem.hidelabel === true ? (
             ""
           ) : (
             <div className="org-datainputlabel">
@@ -552,9 +562,9 @@ class F extends Component {
             </div>
           )}
 
-          {htmlFormItem.readonly == "true" ? (
+          {htmlFormItem.readonly === "true" ? (
             htmlFormItem.defaultvalue
-          ) : htmlFormItem.required == "true" ? (
+          ) : htmlFormItem.required === "true" ? (
             <>
               <input
                 type="file"
@@ -592,6 +602,7 @@ class F extends Component {
     if (htmlFormItem.type === "inputimage") {
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection esp"
           style={{
             width: htmlFormItem.width,
@@ -599,7 +610,7 @@ class F extends Component {
             display: "inline-block",
           }}
         >
-          {htmlFormItem.hidelabel == true ? (
+          {htmlFormItem.hidelabel === true ? (
             ""
           ) : (
             <div className="org-datainputlabel">
@@ -612,9 +623,9 @@ class F extends Component {
             </div>
           )}
 
-          {htmlFormItem.readonly == "true" ? (
+          {htmlFormItem.readonly === "true" ? (
             htmlFormItem.defaultvalue
-          ) : htmlFormItem.required == "true" ? (
+          ) : htmlFormItem.required === "true" ? (
             <>
               <Htmlforminputoutputimage
                 radiogroupname="testrg"
@@ -646,6 +657,7 @@ class F extends Component {
       console.log(htmlFormItem);
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection esp"
           style={{
             width: htmlFormItem.width,
@@ -670,6 +682,7 @@ class F extends Component {
     if (htmlFormItem.type === "inputvideo") {
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection esp"
           style={{
             width: htmlFormItem.width,
@@ -677,7 +690,7 @@ class F extends Component {
             display: "inline-block",
           }}
         >
-          {htmlFormItem.hidelabel == true ? (
+          {htmlFormItem.hidelabel === true ? (
             ""
           ) : (
             <div className="org-datainputlabel">
@@ -689,9 +702,9 @@ class F extends Component {
               {htmlFormItem.label}
             </div>
           )}
-          {htmlFormItem.readonly == "true" ? (
+          {htmlFormItem.readonly === "true" ? (
             htmlFormItem.defaultvalue
-          ) : htmlFormItem.required == "true" ? (
+          ) : htmlFormItem.required === "true" ? (
             <>
               <Htmlforminputoutputvideo
                 radiogroupname="testrg"
@@ -723,6 +736,7 @@ class F extends Component {
       console.log(htmlFormItem);
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection esp"
           style={{
             width: htmlFormItem.width,
@@ -747,6 +761,7 @@ class F extends Component {
     if (htmlFormItem.type === "inputtext") {
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection esp"
           style={{
             width: htmlFormItem.width,
@@ -754,7 +769,7 @@ class F extends Component {
             display: "inline-block",
           }}
         >
-          {htmlFormItem.hidelabel == true ? (
+          {htmlFormItem.hidelabel === true ? (
             ""
           ) : (
             <div className="org-datainputlabel">
@@ -766,9 +781,9 @@ class F extends Component {
               {htmlFormItem.label}
             </div>
           )}
-          {htmlFormItem.readonly == "true" ? (
+          {htmlFormItem.readonly === "true" ? (
             htmlFormItem.defaultvalue
-          ) : htmlFormItem.required == "true" ? (
+          ) : htmlFormItem.required === "true" ? (
             <input
               className="org-datainput htmlforminputitem"
               placeholder={htmlFormItem.placeholder}
@@ -802,6 +817,7 @@ class F extends Component {
     if (htmlFormItem.type === "inputhtml") {
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection esp"
           style={{
             width: htmlFormItem.width,
@@ -809,7 +825,7 @@ class F extends Component {
             display: "inline-block",
           }}
         >
-          {htmlFormItem.hidelabel == true ? (
+          {htmlFormItem.hidelabel === true ? (
             ""
           ) : (
             <div className="org-datainputlabel">
@@ -821,9 +837,9 @@ class F extends Component {
               {htmlFormItem.label}
             </div>
           )}
-          {htmlFormItem.readonly == "true" ? (
+          {htmlFormItem.readonly === "true" ? (
             htmlFormItem.defaultvalue
-          ) : htmlFormItem.required == "true" ? (
+          ) : htmlFormItem.required === "true" ? (
             <input
               className="org-datainput htmlforminputitem"
               placeholder={htmlFormItem.placeholder}
@@ -857,6 +873,7 @@ class F extends Component {
     if (htmlFormItem.type === "inputurl") {
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection esp"
           style={{
             width: htmlFormItem.width,
@@ -864,7 +881,7 @@ class F extends Component {
             display: "inline-block",
           }}
         >
-          {htmlFormItem.hidelabel == true ? (
+          {htmlFormItem.hidelabel === true ? (
             ""
           ) : (
             <div className="org-datainputlabel">
@@ -876,9 +893,9 @@ class F extends Component {
               {htmlFormItem.label}
             </div>
           )}
-          {htmlFormItem.readonly == "true" ? (
+          {htmlFormItem.readonly === "true" ? (
             htmlFormItem.defaultvalue
-          ) : htmlFormItem.required == "true" ? (
+          ) : htmlFormItem.required === "true" ? (
             <input
               className="org-datainput htmlforminputitem"
               placeholder={htmlFormItem.placeholder}
@@ -912,6 +929,7 @@ class F extends Component {
     if (htmlFormItem.type === "inputcheckbox") {
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection esp"
           style={{
             width: htmlFormItem.width,
@@ -919,7 +937,7 @@ class F extends Component {
             display: "inline-block",
           }}
         >
-          {htmlFormItem.hidelabel == true ? (
+          {htmlFormItem.hidelabel === true ? (
             ""
           ) : (
             <div className="org-datainputlabel">
@@ -931,9 +949,9 @@ class F extends Component {
               {htmlFormItem.label}
             </div>
           )}
-          {htmlFormItem.readonly == "true" ? (
+          {htmlFormItem.readonly === "true" ? (
             htmlFormItem.defaultvalue
-          ) : htmlFormItem.required == "true" ? (
+          ) : htmlFormItem.required === "true" ? (
             <input
               type="checkbox"
               className=" htmlforminputitem"
@@ -982,9 +1000,10 @@ class F extends Component {
           ":" +
           getDateDigitalDisplay({ dateIndex: dated.getMinutes() });
       }
-      let dated = new Date();
+      //  let dated = new Date();
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection esp"
           style={{
             width: htmlFormItem.width,
@@ -992,7 +1011,7 @@ class F extends Component {
             display: "inline-block",
           }}
         >
-          {htmlFormItem.hidelabel == true ? (
+          {htmlFormItem.hidelabel === true ? (
             ""
           ) : (
             <div className="org-datainputlabel">
@@ -1004,9 +1023,9 @@ class F extends Component {
               {htmlFormItem.label}
             </div>
           )}
-          {htmlFormItem.readonly == "true" ? (
+          {htmlFormItem.readonly === "true" ? (
             htmlFormItem.defaultvalue
-          ) : htmlFormItem.required == "true" ? (
+          ) : htmlFormItem.required === "true" ? (
             <input
               type="datetime-local"
               className="org-datainput htmlforminputitem"
@@ -1053,6 +1072,7 @@ class F extends Component {
 
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection esp"
           style={{
             width: htmlFormItem.width,
@@ -1060,7 +1080,7 @@ class F extends Component {
             display: "inline-block",
           }}
         >
-          {htmlFormItem.hidelabel == true ? (
+          {htmlFormItem.hidelabel === true ? (
             ""
           ) : (
             <div className="org-datainputlabel">
@@ -1072,9 +1092,9 @@ class F extends Component {
               {htmlFormItem.label}
             </div>
           )}
-          {htmlFormItem.readonly == "true" ? (
+          {htmlFormItem.readonly === "true" ? (
             defaultDatestring
-          ) : htmlFormItem.required == "true" ? (
+          ) : htmlFormItem.required === "true" ? (
             <input
               type="date"
               className="org-datainput htmlforminputitem"
@@ -1110,6 +1130,7 @@ class F extends Component {
     if (htmlFormItem.type === "inputnumber") {
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection esp "
           style={{
             width: htmlFormItem.width,
@@ -1117,7 +1138,7 @@ class F extends Component {
             display: "inline-block",
           }}
         >
-          {htmlFormItem.hidelabel == true ? (
+          {htmlFormItem.hidelabel === true ? (
             ""
           ) : (
             <div className="org-datainputlabel">
@@ -1130,9 +1151,9 @@ class F extends Component {
             </div>
           )}
 
-          {htmlFormItem.readonly == "true" ? (
+          {htmlFormItem.readonly === "true" ? (
             htmlFormItem.defaultvalue
-          ) : htmlFormItem.required == "true" ? (
+          ) : htmlFormItem.required === "true" ? (
             <input
               className="org-datainput htmlforminputitem"
               placeholder={htmlFormItem.placeholder}
@@ -1164,6 +1185,7 @@ class F extends Component {
     if (htmlFormItem.type === "inputemail") {
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection esp"
           style={{
             width: htmlFormItem.width,
@@ -1171,7 +1193,7 @@ class F extends Component {
             display: "inline-block",
           }}
         >
-          {htmlFormItem.hidelabel == true ? (
+          {htmlFormItem.hidelabel === true ? (
             ""
           ) : (
             <div className="org-datainputlabel">
@@ -1183,9 +1205,9 @@ class F extends Component {
               {htmlFormItem.label}
             </div>
           )}
-          {htmlFormItem.readonly == "true" ? (
+          {htmlFormItem.readonly === "true" ? (
             htmlFormItem.defaultvalue
-          ) : htmlFormItem.required == "true" ? (
+          ) : htmlFormItem.required === "true" ? (
             <input
               className="org-datainput htmlforminputitem"
               placeholder={htmlFormItem.placeholder}
@@ -1218,11 +1240,12 @@ class F extends Component {
     if (htmlFormItem.type === "outputtext") {
       console.log(htmlFormItem);
       let directionClass = "";
-      if (htmlFormItem.direction == "horizon") {
+      if (htmlFormItem.direction === "horizon") {
         directionClass = "org-fr org-fai-c org-fjc-sb";
       }
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection esp "
           style={{
             width: htmlFormItem.width,
@@ -1231,7 +1254,7 @@ class F extends Component {
           }}
         >
           <div className={directionClass}>
-            {htmlFormItem.hidelabel == "true" ? (
+            {htmlFormItem.hidelabel === "true" ? (
               ""
             ) : (
               <div className="org-datainputlabel sf ">{htmlFormItem.label}</div>
@@ -1252,11 +1275,12 @@ class F extends Component {
       console.log(htmlFormItem);
       let outputvalue = new Date(htmlFormItem.defaultvalue);
       let directionClass = "";
-      if (htmlFormItem.direction == "horizon") {
+      if (htmlFormItem.direction === "horizon") {
         directionClass = "org-fr org-fai-c org-fjc-sb";
       }
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection esp "
           style={{
             width: htmlFormItem.width,
@@ -1265,7 +1289,7 @@ class F extends Component {
           }}
         >
           <div className={directionClass}>
-            {htmlFormItem.hidelabel == "true" ? (
+            {htmlFormItem.hidelabel === "true" ? (
               ""
             ) : (
               <div className="org-datainputlabel sf ">{htmlFormItem.label}</div>
@@ -1286,11 +1310,12 @@ class F extends Component {
       console.log(htmlFormItem);
       let outputvalue = new Date(htmlFormItem.defaultvalue);
       let directionClass = "";
-      if (htmlFormItem.direction == "horizon") {
+      if (htmlFormItem.direction === "horizon") {
         directionClass = "org-fr org-fai-c org-fjc-sb";
       }
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection esp "
           style={{
             width: htmlFormItem.width,
@@ -1299,7 +1324,7 @@ class F extends Component {
           }}
         >
           <div className={directionClass}>
-            {htmlFormItem.hidelabel == "true" ? (
+            {htmlFormItem.hidelabel === "true" ? (
               ""
             ) : (
               <div className="org-datainputlabel sf ">{htmlFormItem.label}</div>
@@ -1318,11 +1343,12 @@ class F extends Component {
     }
     if (htmlFormItem.type === "outputcheckbox") {
       let directionClass = "";
-      if (htmlFormItem.direction == "horizon") {
+      if (htmlFormItem.direction === "horizon") {
         directionClass = "org-fr org-fai-c org-fjc-sb";
       }
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection esp "
           style={{
             width: htmlFormItem.width,
@@ -1331,7 +1357,7 @@ class F extends Component {
           }}
         >
           <div className={directionClass}>
-            {htmlFormItem.hidelabel == "true" ? (
+            {htmlFormItem.hidelabel === "true" ? (
               ""
             ) : (
               <div className="org-datainputlabel sf ">{htmlFormItem.label}</div>
@@ -1356,6 +1382,7 @@ class F extends Component {
     if (htmlFormItem.type === "inputpassword") {
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection"
           style={{
             width: htmlFormItem.width,
@@ -1363,7 +1390,7 @@ class F extends Component {
             display: "inline-block",
           }}
         >
-          {htmlFormItem.hidelabel == true ? (
+          {htmlFormItem.hidelabel === true ? (
             ""
           ) : (
             <div className="org-datainputlabel">
@@ -1375,9 +1402,9 @@ class F extends Component {
               {htmlFormItem.label}
             </div>
           )}
-          {htmlFormItem.readonly == "true" ? (
+          {htmlFormItem.readonly === "true" ? (
             htmlFormItem.defaultvalue
-          ) : htmlFormItem.required == "true" ? (
+          ) : htmlFormItem.required === "true" ? (
             <input
               type="password"
               className="org-datainput htmlforminputitem"
@@ -1412,6 +1439,7 @@ class F extends Component {
     if (htmlFormItem.type === "inputtextarea") {
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection"
           style={{
             width: htmlFormItem.width,
@@ -1419,14 +1447,14 @@ class F extends Component {
             display: "inline-block",
           }}
         >
-          {htmlFormItem.hidelabel == true ? (
+          {htmlFormItem.hidelabel === true ? (
             ""
           ) : (
             <div className="org-datainputlabel">{htmlFormItem.label}</div>
           )}
-          {htmlFormItem.readonly == "true" ? (
+          {htmlFormItem.readonly === "true" ? (
             htmlFormItem.defaultvalue
-          ) : htmlFormItem.required == "true" ? (
+          ) : htmlFormItem.required === "true" ? (
             <textarea
               className="org-datainput htmlforminputitem"
               placeholder={htmlFormItem.placeholder}
@@ -1472,6 +1500,7 @@ class F extends Component {
       }
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection esp"
           style={{
             width: htmlFormItem.width,
@@ -1479,7 +1508,7 @@ class F extends Component {
             display: "inline-block",
           }}
         >
-          {htmlFormItem.hidelabel == true ? (
+          {htmlFormItem.hidelabel === true ? (
             ""
           ) : (
             <div className="org-datainputlabel">
@@ -1492,9 +1521,9 @@ class F extends Component {
             </div>
           )}
 
-          {htmlFormItem.readonly == "true" ? (
+          {htmlFormItem.readonly === "true" ? (
             htmlFormItem.defaultvalue
-          ) : htmlFormItem.required == "true" ? (
+          ) : htmlFormItem.required === "true" ? (
             <select
               className="org-datainput htmlforminputitem"
               placeholder={htmlFormItem.placeholder}
@@ -1537,6 +1566,7 @@ class F extends Component {
       }
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           className="org-datainputsection "
           style={{
             width: htmlFormItem.width,
@@ -1544,7 +1574,7 @@ class F extends Component {
             display: "inline-block",
           }}
         >
-          {htmlFormItem.hidelabel == true ? (
+          {htmlFormItem.hidelabel === true ? (
             ""
           ) : (
             <div className="org-datainputlabel">
@@ -1599,6 +1629,7 @@ class F extends Component {
     if (htmlFormItem.type === "button") {
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           style={{
             width: htmlFormItem.width,
             height: htmlFormItem.height,
@@ -1625,8 +1656,10 @@ class F extends Component {
     }
 
     if (htmlFormItem.type === "outputhtml") {
+      console.log(htmlFormItem.name);
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           style={{
             width: htmlFormItem.width,
             height: htmlFormItem.height,
@@ -1634,7 +1667,9 @@ class F extends Component {
           }}
         >
           {htmlFormItem.label}
-          <div className="org-datainputlabel">{htmlFormItem.defaultvalue}</div>
+          <div className="org-datainputlabel" key={htmlFormItem.name}>
+            {htmlFormItem.defaultvalue}
+          </div>
         </div>
       );
     }
@@ -1642,6 +1677,7 @@ class F extends Component {
     if (htmlFormItem.type === "outputurl") {
       htmlFormArray.push(
         <div
+          key={htmlFormItem.name}
           style={{
             width: htmlFormItem.width,
             height: htmlFormItem.height,
@@ -1650,7 +1686,11 @@ class F extends Component {
         >
           {htmlFormItem.label}
           <div className="org-datainputlabel">
-            <a href={htmlFormItem.defaultvalue} target="_blank">
+            <a
+              href={htmlFormItem.defaultvalue}
+              target="_blank"
+              rel="noreferrer"
+            >
               {htmlFormItem.defaultvalue}
             </a>
           </div>

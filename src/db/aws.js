@@ -1,9 +1,8 @@
-import React from "react";
+//import React from "react";
 import axios from "axios";
 let createAPIUrl = "https://1e4loh865h.execute-api.us-east-2.amazonaws.com/DEV";
 
-{
-  /*
+/*
 ////////get data
  let result = await getRecorddata({
         objectName: "student",
@@ -226,7 +225,6 @@ if (result.isSuccess === "false") {
 
 
 */
-}
 
 export function getRecordsAWS() {
   let recArray = ["test", "test2"];
@@ -256,7 +254,7 @@ export async function getRecordAWS(dataprops) {
     let valueindex = ":x" + index;
     ExpressionAttributeValues[valueindex] = keyConditions[i].value;
     if (index < lastIndex) {
-      if (keyConditions[i].expression == "beginswith") {
+      if (keyConditions[i].expression === "beginswith") {
         KeyConditionExpression =
           KeyConditionExpression +
           "begins_with (" +
@@ -293,7 +291,7 @@ export async function getRecordAWS(dataprops) {
       //   " ";
 
       ///////
-      if (keyConditions[i].expression == "beginswith") {
+      if (keyConditions[i].expression === "beginswith") {
         KeyConditionExpression =
           KeyConditionExpression +
           "begins_with (" +
@@ -532,11 +530,16 @@ export async function updateRecordAWS(dataprops) {
     let valueindex = ":x" + index;
     ExpressionAttributeValues[valueindex] = fieldProps[i];
     if (index < lastIndex) {
+      // UpdateExpression =
+      //   UpdateExpression + "#a" + index + " = :" + "x" + index + " , ";
       UpdateExpression =
-        UpdateExpression + "#a" + index + " = :" + "x" + index + " , ";
+        UpdateExpression + "#a" + index + " = :x" + index + " , ";
     } else {
+      // UpdateExpression =
+      //   UpdateExpression + "#a" + index + " = :" + "x" + index + " ";
+
       UpdateExpression =
-        UpdateExpression + "#a" + index + " = :" + "x" + index + " ";
+        UpdateExpression + "#a" + index + " = :x" + index + " ";
     }
     index = index + 1;
   }

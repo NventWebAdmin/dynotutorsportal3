@@ -17,10 +17,10 @@ import { showError, getLocalData } from "../../js/index";
 import {
   getRecorddata,
   createRecord,
-  bulkcreateRecord,
+  // bulkcreateRecord,
   updateRecord,
 } from "../../db/index";
-import { sendMail } from "../../js/mail";
+//import { sendMail } from "../../js/mail";
 
 class F extends Component {
   constructor(props) {
@@ -30,6 +30,7 @@ class F extends Component {
 
   async componentDidMount() {
     let { action, isrefreshtoken } = this.props;
+    console.log(isrefreshtoken);
     if (action === "activateuser") {
       this.activateUser();
     }
@@ -119,6 +120,10 @@ class F extends Component {
       clientstatetype,
       inputValue,
     } = props;
+    console.log(inputLabel);
+    console.log(inputType);
+    console.log(clientstatename);
+    console.log(clientstatetype);
     if (inputName === "username") {
       this.setState({ username: inputValue });
     }
@@ -454,6 +459,7 @@ class F extends Component {
           orgemail: orgemail,
           result: result,
         };
+        console.log(props);
         //  this.getUserfromDatabase(props);
       }
       if (result.isSuccess === "false") {
@@ -531,6 +537,7 @@ class F extends Component {
           orgemail: orgemail,
           result: result,
         };
+        console.log(props);
 
         let userprofileresult = await getUserProfile({
           idToken: result.dataprops.idToken,
@@ -648,7 +655,7 @@ class F extends Component {
     var tokenexpiryTime =
       parseInt(d.getTime()) + parseInt(result.dataprops.expiresIn) * 1000;
     let d2 = new Date(parseInt(tokenexpiryTime));
-
+    console.log(d2);
     let dataParams = {
       objectName: "usersignin",
       objectData: {},
@@ -767,6 +774,7 @@ class F extends Component {
       var tokenexpiryTime =
         parseInt(d.getTime()) + parseInt(result.dataprops.expires_in) * 1000;
       let d2 = new Date(parseInt(tokenexpiryTime));
+      console.log(d2);
       await sessionStorage.setItem("orgemail", result.dataprops.email);
       // await sessionStorage.setItem("orguserid", result.dataprops.user_id);
       await sessionStorage.setItem("orgexpiresAt", tokenexpiryTime);
@@ -821,7 +829,7 @@ class F extends Component {
     let { action, isrefreshtoken } = this.props;
 
     let refreshTokenHtml = [];
-    if (isrefreshtoken == true || isrefreshtoken == "true") {
+    if (isrefreshtoken === true || isrefreshtoken === "true") {
       refreshTokenHtml.push(
         <div>
           Session Loggin out Click on Ok to continue session, cancel to logout
@@ -860,13 +868,16 @@ class F extends Component {
         // },
       ];
       loginIconsHtml.push(
-        <Iconbar
-          iconarray={iconarray}
-          isHorizontol="true"
-          style={{ width: "" }}
-          iconPadding="1vw"
-          iconClk={this.clkHandler}
-        />
+        <div key="signin">
+          <Iconbar
+            name="signin"
+            iconarray={iconarray}
+            isHorizontol="true"
+            style={{ width: "" }}
+            iconPadding="1vw"
+            iconClk={this.clkHandler}
+          />
+        </div>
       );
 
       dataprops = [
@@ -918,7 +929,7 @@ class F extends Component {
         },
         {
           label: loginIconsHtml,
-          name: "signup",
+          name: "loginicons",
           type: "outputhtml",
           width: "100%",
           placeholder: "",
@@ -950,17 +961,23 @@ class F extends Component {
           // },
         ];
         loginIconsSignupHtml.push(
-          <Iconbar
-            iconarray={iconarraySignup}
-            isHorizontol="true"
-            style={{ width: "" }}
-            iconPadding="1vw"
-            iconClk={this.clkHandler}
-          />
+          <div key="loginIconsSignupHtml">
+            <Iconbar
+              name="loginIconsSignupHtml"
+              iconarray={iconarraySignup}
+              isHorizontol="true"
+              style={{ width: "" }}
+              iconPadding="1vw"
+              iconClk={this.clkHandler}
+            />
+          </div>
         );
         let signuppannelbuttonshtml = [];
         signuppannelbuttonshtml.push(
-          <div className="org-fr org-fjc-sb org-fai-c">
+          <div
+            key="signuppannelbuttonshtml"
+            className="org-fr org-fjc-sb org-fai-c"
+          >
             <div className="org-fr org-fai-c">
               <button
                 onClick={() =>
@@ -1073,7 +1090,10 @@ class F extends Component {
       if (action === "forgotpassword") {
         let forgotpasswordpannelbuttonshtml = [];
         forgotpasswordpannelbuttonshtml.push(
-          <div className="org-fr org-fjc-e">
+          <div
+            key="forgotpasswordpannelbuttonshtml"
+            className="org-fr org-fjc-e"
+          >
             <button
               onClick={() =>
                 this.clkHandler({
@@ -1134,6 +1154,7 @@ class F extends Component {
         {showSpinner === "true" ? <Spinner /> : ""}
         <img
           src={imgLogin}
+          alt="img"
           style={{ width: "100vw", height: "100vh", objectFit: "cover" }}
         />
         <div
@@ -1152,7 +1173,7 @@ class F extends Component {
             <b>Postpaid Tutors</b>
           </div>
 
-          {isrefreshtoken == "true" ? (
+          {isrefreshtoken === "true" ? (
             <div>{refreshTokenHtml}</div>
           ) : (
             <Htmlform

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Signincomp from "../src/components/auth/signin";
 import Signupcomp from "../src/components/auth/signup";
 import Activateuser from "./components/auth/activateuser";

@@ -3,8 +3,7 @@ import { GetFontAwesomeIcon, GetGoogleIcon, GetBoostrapIcon } from "./icons";
 
 // documentation
 
-{
-  /*
+/*
 iconClk = (e) => {
   console.log(e.target.dataset.name);
 };
@@ -54,7 +53,6 @@ style={{ width: "30vw" }}
 iconPadding="2vw"
 iconClk={this.iconClk}
 /> */
-}
 
 class F extends Component {
   constructor(props) {
@@ -66,10 +64,12 @@ class F extends Component {
 
   render() {
     let iconarrayhtml = [];
+
     for (let i = 0; i < this.props.iconarray.length; i++) {
-      if (this.props.iconarray[i].iconSource == "google") {
+      if (this.props.iconarray[i].iconSource === "google") {
         iconarrayhtml.push(
           <div
+            key={this.props.iconarray[i].name}
             style={{
               padding: this.props.iconPadding ? this.props.iconPadding : "",
             }}
@@ -88,14 +88,17 @@ class F extends Component {
             </div>
           </div>
         );
-      } else if (this.props.iconarray[i].iconSource == "fontaway") {
+      } else if (this.props.iconarray[i].iconSource === "fontaway") {
+        console.log(this.props.iconarray[i]);
         iconarrayhtml.push(
           <div
+            key={this.props.iconarray[i].name}
             style={{
               padding: this.props.iconPadding ? this.props.iconPadding : "",
             }}
           >
             <div
+              key={this.props.iconarray[i].name}
               onClick={() =>
                 this.props.iconClk({ buttonName: this.props.iconarray[i].name })
               }
@@ -103,15 +106,17 @@ class F extends Component {
               data-name={this.props.iconarray[i].name}
             >
               <GetFontAwesomeIcon
+                key={this.props.iconarray[i].name}
                 name={this.props.iconarray[i].iconName}
                 data-name={this.props.iconarray[i].name}
               />
             </div>
           </div>
         );
-      } else if (this.props.iconarray[i].iconSource == "bootstrap") {
+      } else if (this.props.iconarray[i].iconSource === "bootstrap") {
         iconarrayhtml.push(
           <div
+            key={this.props.iconarray[i].name}
             style={{
               padding: this.props.iconPadding ? this.props.iconPadding : "",
             }}
@@ -135,9 +140,10 @@ class F extends Component {
     }
 
     return (
-      <div style={this.props.style}>
-        {this.props.isHorizontol == "true" ? (
+      <div key={this.props.name} style={this.props.style}>
+        {this.props.isHorizontol === "true" ? (
           <div
+            key={this.props.name}
             style={{
               display: "flex",
 
@@ -150,8 +156,9 @@ class F extends Component {
         ) : (
           ""
         )}
-        {this.props.isHorizontol != "true" ? (
+        {this.props.isHorizontol !== "true" ? (
           <div
+            key={this.props.name}
             style={{
               display: "flex",
 

@@ -1,13 +1,13 @@
 import axios from "axios";
-import React from "react";
+//import React from "react";
 
 //var firebase = require("firebase");
-var firebaseui = require("firebaseui");
+//var firebaseui = require("firebaseui");
 
 // Initialize Firebase
 //window.firebase.initializeApp(firebaseConfig);
 
-let errMessage = "";
+//let errMessage = "";
 let firebaseWebApiKey = "AIzaSyAwsbEv9dvu2aDeOf4bpMZ2byvwLUgqIDo";
 let firebaseAuthSignupURL =
   "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" +
@@ -32,6 +32,9 @@ let firebaseAuthVeifyEmailURL =
 let firebaseAuthgetProviderslURL =
   "https://identitytoolkit.googleapis.com/v1/accounts:createAuthUri?key=" +
   firebaseWebApiKey;
+
+console.log(firebaseAuthResetPasswordURL);
+console.log(firebaseAuthgetProviderslURL);
 
 export async function signinFirebase(userDetails) {
   console.log(userDetails);
@@ -278,8 +281,9 @@ export function isUserAlreadyExistsFirebase() {
 
 export function changePasswordFirebase(userDetails) {
   let result = { isSuccess: "false", message: "", dataprops: {} };
-
+  console.log(result);
   let useremail = userDetails.username;
+  console.log(useremail);
   let password = userDetails.password;
   let idToken = userDetails.idToken;
 
@@ -318,7 +322,7 @@ export function changePasswordFirebase(userDetails) {
 
 export async function signInwithGoogleFirebase(userDetails) {
   let result = { isSuccess: "false", message: "", dataprops: {} };
-
+  console.log(result);
   // let useremail = userDetails.username;
   // let password = userDetails.password;
   // let idToken = userDetails.idToken;
@@ -384,7 +388,7 @@ export async function signInwithGoogleFirebase(userDetails) {
 }
 export function signInwithFacebookFirebase(userDetails) {
   let result = { isSuccess: "false", message: "", dataprops: {} };
-
+  console.log(result);
   // let useremail = userDetails.username;
   // let password = userDetails.password;
   // let idToken = userDetails.idToken;
@@ -403,8 +407,10 @@ export function signInwithFacebookFirebase(userDetails) {
     .then(function (result) {
       // This gives you a Facebook Access Token. You can use it to access the Facebook API.
       var token = result.credential.accessToken;
+      console.log(token);
       // The signed-in user info.
       var user = result.user;
+      console.log(user);
       // ...
     })
     .catch(function (error) {
@@ -415,6 +421,10 @@ export function signInwithFacebookFirebase(userDetails) {
       var email = error.email;
       // The firebase.auth.AuthCredential type that was used.
       var credential = error.credential;
+      console.log(errorCode);
+      console.log(errorMessage);
+      console.log(email);
+      console.log(credential);
       // ...
     });
 }

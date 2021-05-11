@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { getRecorddata, createRecord, bulkcreateRecord } from "../db/index";
-import { getLocalData, serverButtonHandler } from "../js/index";
+import { getRecorddata } from "../db/index";
+import { getLocalData } from "../js/index";
 
 /*
 compprops:{ metadata: {

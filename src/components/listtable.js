@@ -35,9 +35,9 @@ class F extends Component {
       morerecorddatafromstate,
     } = this.state;
     let { morerecorddata, updaterecorddata } = this.props;
-    let { prevmorerecorddata, prevupdaterecorddata } = prevProps;
+    //  let { prevmorerecorddata, prevupdaterecorddata } = prevProps;
     if (
-      JSON.stringify(morerecorddatafromstate) != JSON.stringify(morerecorddata)
+      JSON.stringify(morerecorddatafromstate) !== JSON.stringify(morerecorddata)
     ) {
       for (let i in morerecorddata) {
         recordDataTemp.push(morerecorddata[i]);
@@ -50,12 +50,12 @@ class F extends Component {
     }
 
     if (
-      JSON.stringify(updaterecorddatafromstate) !=
+      JSON.stringify(updaterecorddatafromstate) !==
       JSON.stringify(updaterecorddata)
     ) {
       for (let i in recordDataTemp) {
         for (let j in updaterecorddata) {
-          if (recordDataTemp[i].id == updaterecorddata[j].id) {
+          if (recordDataTemp[i].id === updaterecorddata[j].id) {
             recordDataTemp[i] = Object.assign(
               recordDataTemp[i],
               updaterecorddata[j]
@@ -65,7 +65,7 @@ class F extends Component {
 
         for (let i in recordData) {
           for (let j in updaterecorddata) {
-            if (recordData[i].id == updaterecorddata[j].id) {
+            if (recordData[i].id === updaterecorddata[j].id) {
               recordData[i] = Object.assign(recordData[i], updaterecorddata[j]);
             }
           }
@@ -85,8 +85,8 @@ class F extends Component {
     let itemListData = [];
     let { recordDataTemp } = this.state;
     if (
-      e.target.dataset.name == "upload" ||
-      e.target.dataset.name == "download"
+      e.target.dataset.name === "upload" ||
+      e.target.dataset.name === "download"
     ) {
       let tableCheckBoxElements = document.querySelectorAll(
         ".tablecompinputcheckbox"
@@ -95,7 +95,7 @@ class F extends Component {
       for (let i = 0; i < tableCheckBoxElements.length; i++) {
         for (let j = 0; j < recordDataTemp.length; j++) {
           if (
-            tableCheckBoxElements[i].dataset.rowhtmlid1 ==
+            tableCheckBoxElements[i].dataset.rowhtmlid1 ===
               recordDataTemp[j][this.props.rowhtmlid1] &&
             tableCheckBoxElements[i].checked
           ) {
@@ -104,7 +104,7 @@ class F extends Component {
         }
       }
       console.log(itemListData);
-      if (e.target.dataset.name == "upload") {
+      if (e.target.dataset.name === "upload") {
         this.props.tableOnclick({
           itemLabel: "",
           itemName: e.target.dataset.name,
@@ -114,7 +114,7 @@ class F extends Component {
         });
       }
 
-      if (e.target.dataset.name == "download") {
+      if (e.target.dataset.name === "download") {
         this.setState({ downloadTableasCSV: true });
       }
     } else {
@@ -175,7 +175,7 @@ class F extends Component {
 
     // datapanel
     let dataHtml = [];
-    let dataprops = [];
+    // let dataprops = [];
     let columnsArray = [];
     let columnsArraySorted = [];
 

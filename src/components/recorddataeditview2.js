@@ -3,21 +3,19 @@ import {
   getRecorddata,
   createRecord,
   updateRecord,
-  bulkcreateRecord,
+  // bulkcreateRecord,
   deleteRecord,
 } from "../db/index";
 import {
   sortArray,
-  fieldTypeHtmltoDBmapping,
   getLocalData,
   getDynamicCompPropsData,
-  serverButtonHandler,
   dataReplaceHandler,
 } from "../js/index";
 import Htmlform from "./htmlformnew";
 import Calender from "./calender";
 import Note from "./notepadlist";
-import { GetLocalIcon, GetGoogleIcon } from "./icons";
+//import { GetLocalIcon, GetGoogleIcon } from "./icons";
 import Recorddatarelatedlist from "./recorddatarelatedlist2";
 /*
  
@@ -43,6 +41,7 @@ class F extends Component {
       recordid,
       action,
     } = this.props.compprops;
+    console.log(editlayoutid);
     let props = {};
     props.tablename = tablename;
 
@@ -146,9 +145,9 @@ class F extends Component {
   saveRecord = async (e, props) => {
     let {
       viewlayoutid,
-      editlayoutid,
+      //    editlayoutid,
       tablename,
-      recordid,
+      //  recordid,
       //   defaultdatafilter,
     } = this.props.compprops;
     let { layoutbuttonresult } = props;
@@ -207,10 +206,10 @@ class F extends Component {
 
   deleteRecord = async () => {
     let {
-      viewlayoutid,
-      editlayoutid,
+      //  viewlayoutid,
+      //  editlayoutid,
       tablename,
-      recordid,
+      //  recordid,
     } = this.props.compprops;
     let { recordData } = this.state;
     let localdata = getLocalData(this.props);
@@ -229,10 +228,10 @@ class F extends Component {
   editRecord = async () => {
     let { recordData } = this.state;
     let {
-      viewlayoutid,
+      //  viewlayoutid,
       editlayoutid,
       tablename,
-      recordid,
+      //  recordid,
     } = this.props.compprops;
     let props = {};
     props.tablename = tablename;
@@ -242,12 +241,12 @@ class F extends Component {
   };
 
   createRecord = async (e, props) => {
-    let localdata = getLocalData(this.props);
+    // let localdata = getLocalData(this.props);
     let {
       viewlayoutid,
-      editlayoutid,
+      //  editlayoutid,
       tablename,
-      recordid,
+      // recordid,
       // defaultdatafilter,
     } = this.props.compprops;
     let { layoutbuttonresult } = props;
@@ -285,9 +284,9 @@ class F extends Component {
     let { recordData } = this.state;
     let {
       viewlayoutid,
-      editlayoutid,
+      //  editlayoutid,
       tablename,
-      recordid,
+      // recordid,
     } = this.props.compprops;
     let props = {};
     props.tablename = tablename;
@@ -306,11 +305,11 @@ class F extends Component {
 
   changeHanlder = (e, props) => {
     let {
-      inputLabel,
+      //  inputLabel,
       inputName,
-      inputType,
-      clientstatename,
-      clientstatetype,
+      // inputType,
+      // clientstatename,
+      // clientstatetype,
       inputValue,
     } = props;
     console.log(inputName);
@@ -344,7 +343,7 @@ class F extends Component {
         console.log(buttons[i]);
         let validations = buttons[i].action.validations;
         let datareplaceparams = buttons[i].action.datareplaceparams;
-        let redirection = buttons[i].action.redirection;
+        // let redirection = buttons[i].action.redirection;
         console.log(datareplaceparams);
         if (datareplaceparams && Object.keys(datareplaceparams).length > 0) {
           recordData = await dataReplaceHandler({
@@ -370,7 +369,7 @@ class F extends Component {
   };
 
   clickHandler = async (e) => {
-    let { recordData } = this.state;
+    //let { recordData } = this.state;
     let dataset = e.target.dataset;
     if (dataset.name === "new-cancel") {
       window.location.reload();
@@ -436,7 +435,7 @@ class F extends Component {
     let requiredfields = validations.requiredfields;
     if (Object.keys(requiredfields).length > 0) {
       for (let i in requiredfields) {
-        if (recorddata[i] == "" || recorddata[i] == undefined) {
+        if (recorddata[i] === "" || recorddata[i] === undefined) {
           error = error + "  " + requiredfields[i] + ", ";
         }
       }
@@ -451,9 +450,9 @@ class F extends Component {
     console.log(this.props);
 
     let localdata = getLocalData(this.props);
-    let url = new URL(document.location);
+    // let url = new URL(document.location);
     // var searchParams = new URLSearchParams(url.search);
-    let { action, recordid } = this.props.compprops;
+    let { action } = this.props.compprops;
 
     let { layoutrecordData, recordData, showUI, activeTabName } = this.state;
     let highlightpanel,
@@ -480,7 +479,7 @@ class F extends Component {
       //  if (searchParams.get("mainpaneltab")) {
       //    defaultmainpaneltab = searchParams.get("mainpaneltab");
       //  }
-      if (activeTabName != "") {
+      if (activeTabName !== "") {
         defaultmainpaneltab = activeTabName;
       }
       relatedlist = layoutrecordData.compprops.relatedlist;
@@ -502,11 +501,11 @@ class F extends Component {
     }
 
     let mainPanelHtml = [];
-    let introHtml = [];
-    let tabHtml = [];
+    //  let introHtml = [];
+    // let tabHtml = [];
     let detailContentHtml = [];
-    let relatedContentHtml = [];
-    let relatedHtml = [];
+    // let relatedContentHtml = [];
+    // let relatedHtml = [];
     let activetab = defaultmainpaneltab;
 
     let highlightpanelColumnHtml = [];
@@ -632,13 +631,13 @@ class F extends Component {
           ) {
             for (let j in tabsArraySorted[i].sections) {
               let sectionHtml = [];
-              let sectionHtml1 = [];
+              //   let sectionHtml1 = [];
               let dataprops = [];
 
               for (let k in tabsArraySorted[i].sections[j].columns) {
                 let defaultvalue = "";
                 console.log(recordData);
-                if (action == "view") {
+                if (action === "view") {
                   // if name is object
                   let fieldname =
                     tabsArraySorted[i].sections[j].columns[k].name;

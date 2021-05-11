@@ -6,26 +6,34 @@ export let GetFontAwesomeIcon = (props) => {
   return (
     <>
       {props.name === "accessible" ? (
-        <i class="fab fa-accessible-icon esp" {...props}></i>
+        <i className="fab fa-accessible-icon esp" {...props}></i>
       ) : (
         ""
       )}
       {props.name === "addressbook" ? (
-        <i class="fas fa-address-book esp" {...props}></i>
+        <i className="fas fa-address-book esp" {...props}></i>
       ) : (
         ""
       )}
       {props.name === "facebook" ? (
-        <i class="fa fa-facebook-f" {...props}></i>
+        <i className="fa fa-facebook-f" {...props}></i>
       ) : (
         ""
       )}
 
-      {props.name === "spinner" ? <i class="fa fa-spinner"></i> : ""}
-      {props.name === "close" ? <i class="fa fa-close"></i> : ""}
+      {props.name === "spinner" ? <i className="fa fa-spinner"></i> : ""}
+      {props.name === "close" ? <i className="fa fa-close"></i> : ""}
 
-      {props.name === "google" ? <i class="fa fa-google" {...props}></i> : ""}
-      {props.name === "amazon" ? <i class="fa fa-amazon" {...props}></i> : ""}
+      {props.name === "google" ? (
+        <i className="fa fa-google" {...props}></i>
+      ) : (
+        ""
+      )}
+      {props.name === "amazon" ? (
+        <i className="fa fa-amazon" {...props}></i>
+      ) : (
+        ""
+      )}
     </>
   );
 };
@@ -35,14 +43,14 @@ export let GetGoogleIcon = (props) => {
     <>
       {props.style ? (
         <i
-          class="material-icons esp md-inactive md-dark"
+          className="material-icons esp md-inactive md-dark"
           style={props.style}
           {...props}
         >
           {props.name}
         </i>
       ) : (
-        <i class="material-icons esp md-inactive md-dark" {...props}>
+        <i className="material-icons esp md-inactive md-dark" {...props}>
           {props.name}
         </i>
       )}
@@ -54,7 +62,7 @@ export let GetBoostrapIcon = (props) => {
   return (
     <>
       {props.name === "cloud" ? (
-        <i class="glyphicon glyphicon-cloud esp" {...props}></i>
+        <i className="glyphicon glyphicon-cloud esp" {...props}></i>
       ) : (
         ""
       )}

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { getRecorddata, createRecord, bulkcreateRecord } from "../db/index";
+import { getRecorddata } from "../db/index";
 import Tablecomp from "./tablecomp2";
 import {
   getLocalData,
-  serverButtonHandler,
+  //  serverButtonHandler,
   filterArraybyObject,
 } from "../js/index";
-import { GetFontAwesomeIcon, GetGoogleIcon } from "./icons";
+//import { GetFontAwesomeIcon, GetGoogleIcon } from "./icons";
 import Recorddataeditview from "./recorddataeditview2";
 
 class F extends Component {
@@ -25,7 +25,7 @@ class F extends Component {
   }
 
   async componentDidMount() {
-    let clickedrecordid = "";
+    // let clickedrecordid = "";
     let url = new URL(document.location);
     console.log(url);
     // var searchParams = new URLSearchParams(url.search);
@@ -49,6 +49,17 @@ class F extends Component {
       recordviewfieldname,
       showrecordeditview,
     } = this.props.compprops;
+    console.log(comphtmlid);
+    console.log(recordeditviewprops);
+    console.log(showallrecordsubscribe);
+    console.log(parentobjectfilter);
+    console.log(showallrecords);
+    console.log(enablelocaldbdata);
+    console.log(listdisplaytype);
+    console.log(defaultdatafilter);
+    console.log(recordviewfieldname);
+    console.log(showrecordeditview);
+
     this.getRecordListMetadataAndDatafromServer({
       tablename: tablename,
       viewname: viewname,
@@ -129,7 +140,7 @@ class F extends Component {
       if (activetableviewItem.keycondition.expression === "equalsto") {
       }
       console.log(datasortparambeginswith);
-      if (datasortparamequalsto != "") {
+      if (datasortparamequalsto !== "") {
         dataParams = {
           objectName: tablename,
           objectData: {},
@@ -152,7 +163,7 @@ class F extends Component {
         };
       }
 
-      if (datasortparambeginswith != "") {
+      if (datasortparambeginswith !== "") {
         dataParams = {
           objectName: tablename,
           objectData: {},
@@ -193,7 +204,7 @@ class F extends Component {
           },
           () => {
             if (recordDataList.length > 0) {
-              if (clickedrecordid == "") {
+              if (clickedrecordid === "") {
                 clickedrecordid = recordDataList[0][recordviewfieldname];
               }
               this.setState({

@@ -352,6 +352,7 @@ export const dataReplaceHandler = async (props) => {
     //    defaultdatafilter,
   } = props;
   console.log(props);
+  console.log(clickprops);
   if (Object.keys(datareplaceparams).length > 0) {
     for (let j in datareplaceparams) {
       let fieldvalue = datareplaceparams[j].replacetext;

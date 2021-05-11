@@ -23,8 +23,6 @@ function F(props) {
         template="loginPanelLeft"
         textPanel={textPanel}
         logo={Sfdclogo}
-        template="loginPanelLeft"
-        action="forgotpassword"
       />
     </>
   );

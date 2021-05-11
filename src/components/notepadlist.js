@@ -1,16 +1,11 @@
 import React, { Component } from "react";
 import Notepad from "./notepad";
+import { getRecorddata } from "../db/index";
 import {
-  getRecorddata,
-  createRecord,
-  bulkcreateRecord,
-  deleteRecord,
-} from "../db/index";
-import {
-  sortArray,
-  fieldTypeHtmltoDBmapping,
+  // sortArray,
+  // fieldTypeHtmltoDBmapping,
   getLocalData,
-  serverButtonHandler,
+  // serverButtonHandler,
   filterArraybyObject,
 } from "../js/index";
 
@@ -43,6 +38,17 @@ class F extends Component {
       iseditactive,
       isdeleteactive,
     } = this.props.compprops;
+    console.log(comphtmlid);
+    console.log(showallrecordsubscribe);
+    console.log(parentobjectfilter);
+    console.log(showallrecords);
+    console.log(listdisplaytype);
+    console.log(defaultdatafilter);
+    console.log(iscreateactive);
+    console.log(isviewactive);
+    console.log(iseditactive);
+    console.log(isdeleteactive);
+
     let props = {
       tablename: tablename,
       defaultsortparam: defaultsortparam,
@@ -65,7 +71,7 @@ class F extends Component {
     let {
       tablename,
       defaultsortparam,
-      enablelocaldbdata,
+      //  enablelocaldbdata,
       parentid,
       //  defaultdatafilter,
       activeNoteId,
@@ -83,7 +89,7 @@ class F extends Component {
     let recordData = [];
     let recordDataFinal = [];
     let rsData = [];
-    let rsDataFinal = [];
+    // let rsDataFinal = [];
 
     if (
       showallrecordsubscribe === "true" ||
@@ -174,11 +180,11 @@ class F extends Component {
     });
 
     if (recordDataFinal.length > 0) {
-      if (activeNoteId == "" && recordDataFinal.length > 0) {
+      if (activeNoteId === "" && recordDataFinal.length > 0) {
         activeNoteId = recordDataFinal[0].id;
       }
 
-      if (action == "") {
+      if (action === "") {
         action = recordDataFinal[0] ? "view" : "create";
       }
 
@@ -229,9 +235,9 @@ class F extends Component {
       defaultsortparam,
       enablelocaldbdata,
       parentid,
-      showallrecordsubscribe,
-      parentobjectfilter,
-      showallrecords,
+      //    showallrecordsubscribe,
+      //   parentobjectfilter,
+      //   showallrecords,
     } = this.props.compprops;
     let serverprops = {
       tablename: tablename,
@@ -283,7 +289,7 @@ class F extends Component {
   render() {
     let {
       iscreateactive,
-      isviewactive,
+      //   isviewactive,
       iseditactive,
       isdeleteactive,
     } = this.props.compprops;

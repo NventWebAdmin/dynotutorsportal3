@@ -1,19 +1,18 @@
-import React from "react";
-import { MediaUploader } from "./cors_upload";
+//import React from "react";
+//import { MediaUploader } from "./cors_upload";
 import axios from "axios";
-import {
-  getImagefromData,
-  getVideofromData,
-  getPDFfromData,
-} from "../js/getMultiMediafromData";
+import // getImagefromData,
+// getVideofromData,
+// getPDFfromData,
+"../js/getMultiMediafromData";
 
-let youtubeApiUrl = "https://www.googleapis.com/youtube/v3/";
+//let youtubeApiUrl = "https://www.googleapis.com/youtube/v3/";
 
 export let getRecordsYoutube = async (dataprops) => {
-  let result = { isSuccess: "false", message: "", dataprops: {} };
-  let folderUrl = dataprops.folderUrl;
+  //let result = { isSuccess: "false", message: "", dataprops: {} };
+  // let folderUrl = dataprops.folderUrl;
   let recArray = ["test", "test2"];
-  let prefix = folderUrl;
+  // let prefix = folderUrl;
   return recArray;
 };
 
@@ -21,10 +20,10 @@ export async function getRecordYoutube(dataprops) {
   console.log(dataprops);
 
   let result = { isSuccess: "false", message: "", dataprops: {} };
-  let folderUrl = dataprops.folderUrl;
-  let fileName = dataprops.fileName;
-  let pdfpageNumber = dataprops.pdfpageNumber;
-  let keyParam = folderUrl + "/" + fileName;
+  //let folderUrl = dataprops.folderUrl;
+  //let fileName = dataprops.fileName;
+  // let pdfpageNumber = dataprops.pdfpageNumber;
+  // let keyParam = folderUrl + "/" + fileName;
 
   let getresult = await axios
     .get(
@@ -32,7 +31,7 @@ export async function getRecordYoutube(dataprops) {
     )
     .then((err) => console.log(JSON.stringify(err)))
     .catch((err) => console.log(JSON.stringify(err)));
-
+  console.log(getresult);
   const config = {
     headers: {
       Authorization: `Bearer `,
@@ -40,7 +39,7 @@ export async function getRecordYoutube(dataprops) {
       "Content-Type": "application/json",
     },
   };
-
+  console.log(config);
   const bodyParameters = {
     snippet: {
       categoryId: "22",
@@ -51,6 +50,8 @@ export async function getRecordYoutube(dataprops) {
       privacyStatus: "private",
     },
   };
+
+  console.log(bodyParameters);
 
   // let axiosresult = await axios
   //   .post(
@@ -70,10 +71,10 @@ export async function getRecordYoutube(dataprops) {
 export async function createRecordYoutube(dataprops) {
   console.log(dataprops);
   let result = { isSuccess: "false", message: "", dataprops: {} };
-  let folderUrl = dataprops.folderUrl;
-  let fileName = dataprops.fileName;
-  let fileEvent = dataprops.fileEvent;
-  var files, file, fileSuffix;
+  //  let folderUrl = dataprops.folderUrl;
+  //  let fileName = dataprops.fileName;
+  // let fileEvent = dataprops.fileEvent;
+  // var files, file, fileSuffix;
 
   const config = {
     headers: {

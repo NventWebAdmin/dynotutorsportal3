@@ -1,6 +1,6 @@
 import firebase from "firebase";
-import React from "react";
-import axios from "axios";
+//import React from "react";
+//import axios from "axios";
 
 var config = {
   apiKey: "AIzaSyCV4ykN9qy5eIaWuTJX3UftfcH6VsXDfXk",

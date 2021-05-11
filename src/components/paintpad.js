@@ -36,7 +36,7 @@ class F extends Component {
   }
   componentDidUpdate(prevProps) {
     let {
-      canvashtmlid,
+      //canvashtmlid,
       hiddentexthtmlid,
       defaultdrawHistory,
     } = this.props.compprops;
@@ -61,9 +61,9 @@ class F extends Component {
     console.log(this.props.compprops);
     let {
       canvashtmlid,
-      hiddentexthtmlid,
+      // hiddentexthtmlid,
       defaultdrawHistory,
-      editable,
+      // editable,
     } = this.props.compprops;
     let { drawHistory } = this.state;
     if (defaultdrawHistory) {
@@ -80,10 +80,10 @@ class F extends Component {
     console.log(c.parentElement.clientWidth);
     c.width = c.parentElement.clientWidth - 20;
     c.height = c.parentElement.clientHeight - 20;
-    if (canvashtmlid != "") {
+    if (canvashtmlid !== "") {
       c.id = canvashtmlid;
     }
-    var BB = c.getBoundingClientRect();
+    // var BB = c.getBoundingClientRect();
 
     this.setState(
       {
@@ -104,7 +104,7 @@ class F extends Component {
   };
 
   drawText = (props) => {
-    let { canvashtmlid, hiddentexthtmlid } = this.props.compprops;
+    let { canvashtmlid } = this.props.compprops;
     console.log(props);
     let { font, text, x, y } = props;
     var c = document.getElementById(canvashtmlid);
@@ -114,7 +114,7 @@ class F extends Component {
   };
 
   drawRect = () => {
-    let { canvashtmlid, hiddentexthtmlid } = this.props.compprops;
+    let { canvashtmlid } = this.props.compprops;
 
     var c = document.getElementById(canvashtmlid);
     var ctx = c.getContext("2d");
@@ -132,7 +132,7 @@ class F extends Component {
     var BB = c.getBoundingClientRect();
     let cLeft = BB.left;
     let cTop = BB.top;
-    let { drawHistory, dragType } = this.state;
+    let { dragType } = this.state;
     if (dragType === "text") {
       document.getElementById(hiddendivhtmlid).innerHTML = "";
       console.log(e.clientX);
@@ -162,7 +162,7 @@ class F extends Component {
 
   drawPaintArray = (props) => {
     let { data } = props;
-    let { canvashtmlid, hiddentexthtmlid } = this.props.compprops;
+    let { canvashtmlid } = this.props.compprops;
 
     var canvas = document.getElementById(canvashtmlid);
     var ctx = canvas.getContext("2d");
@@ -179,7 +179,7 @@ class F extends Component {
   };
   mouseMoveCanvas2 = (e) => {
     let { clkType } = this.state;
-    let { canvashtmlid, hiddentexthtmlid } = this.props.compprops;
+    let { canvashtmlid } = this.props.compprops;
     // console.log("canvas2 mousemove" + e.clientX);
     // console.log("canvas2 mousemove" + cLeft);
     var canvas = document.getElementById(canvashtmlid);
@@ -189,7 +189,7 @@ class F extends Component {
     let cLeft = BB.left;
     let cTop = BB.top;
 
-    if (e.type == "mouseout") {
+    if (e.type === "mouseout") {
       this.attachtoParent();
     }
 
@@ -200,16 +200,16 @@ class F extends Component {
       prevY = currY;
       currX = e.clientX - cLeft;
       currY = e.clientY - cTop;
-      if (e.type == "mousedown") {
+      if (e.type === "mousedown") {
         flag = true;
       }
-      if (e.type == "mouseup" || e.type == "mouseout") {
+      if (e.type === "mouseup" || e.type === "mouseout") {
         flag = false;
-        if (e.type == "mouseup") {
+        if (e.type === "mouseup") {
           this.autoSavePaintDatatoState();
         }
       }
-      if (e.type == "mousemove") {
+      if (e.type === "mousemove") {
         if (flag) {
           paintArray.push({
             prevX: prevX,
@@ -233,14 +233,14 @@ class F extends Component {
     }
 
     if (clkType === "line") {
-      if (e.type == "mousedown") {
+      if (e.type === "mousedown") {
         flag = true;
         currX = e.clientX - cLeft;
         currY = e.clientY - cTop;
         linecurrX = e.clientX - cLeft;
         linecurrY = e.clientY - cTop;
       }
-      if (e.type == "mousemove" && flag === true) {
+      if (e.type === "mousemove" && flag === true) {
         prevX = currX;
         prevY = currY;
         currX = e.clientX - cLeft;
@@ -253,7 +253,7 @@ class F extends Component {
         ctx.stroke();
         ctx.closePath();
       }
-      if (e.type == "mouseup") {
+      if (e.type === "mouseup") {
         flag = false;
         lineprevX = linecurrX;
         lineprevY = linecurrY;
@@ -278,8 +278,8 @@ class F extends Component {
     let { drawHistory } = this.state;
     let {
       canvashtmlid,
-      hiddentexthtmlid,
-      defaultdrawHistory,
+      //   hiddentexthtmlid,
+      //  defaultdrawHistory,
     } = this.props.compprops;
     console.log(this.state);
     var c = document.getElementById(canvashtmlid);
@@ -342,7 +342,7 @@ class F extends Component {
 
   inputTextChanged = (e) => {
     let { canvashtmlid, hiddendivhtmlid } = this.props.compprops;
-    let { drawHistory, dragType } = this.state;
+    let { drawHistory } = this.state;
     var rect = e.target.getBoundingClientRect();
     let d = new Date();
 
@@ -381,11 +381,11 @@ class F extends Component {
   };
 
   attachtoParent = () => {
-    let { drawHistory, drawHistorytoAttach } = this.state;
+    let { drawHistory } = this.state;
     let {
-      canvashtmlid,
+      // canvashtmlid,
       canvashtmlparentdivid,
-      hiddentexthtmlid,
+      // hiddentexthtmlid,
       order,
     } = this.props.compprops;
     // drawHistorytoAttach = drawHistory;
@@ -486,7 +486,6 @@ class F extends Component {
           onMouseDown={this.mouseMoveCanvas2}
           onMouseUp={this.mouseMoveCanvas2}
           onMouseOut={this.mouseMoveCanvas2}
-          onDragOver={(e) => this.allowDrop(e)}
           onDragOver={(e) => this.allowDrop(e)}
         ></canvas>
       </div>

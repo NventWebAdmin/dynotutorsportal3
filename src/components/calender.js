@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { GetLocalIcon, GetGoogleIcon } from "./icons";
-import { getRecorddata, createRecord } from "../db/index";
+import { getRecorddata } from "../db/index";
 import Recorddataeditview from "./recorddataeditview2";
 
 import {
@@ -102,6 +102,15 @@ class F extends Component {
       hidesidebar,
       hidedisplaytypepanel,
     } = this.props.compprops;
+    console.log(comphtmlid);
+    console.log(recordeditviewprops);
+    console.log(listdisplaytype);
+    console.log(defaultdatafilter);
+    console.log(iscreateactive);
+    console.log(iscreateactive);
+    console.log(isviewactive);
+    console.log(hidesidebar);
+    console.log(hidedisplaytypepanel);
 
     let { activedate, activemonth, activeyear, viewtype } = this.state;
 
@@ -1696,8 +1705,8 @@ class F extends Component {
       viewtype,
       // eventdata,
       compType,
-      defaultNewMeetingDate,
-      defaultNewMeetingHour,
+      //   defaultNewMeetingDate,
+      //   defaultNewMeetingHour,
       viewMeetingData,
     } = this.state;
     let {

@@ -128,7 +128,7 @@ class F extends Component {
     }
 
     let modalclass;
-    if (this.props.isModalOpen == "true") {
+    if (this.props.isModalOpen === "true") {
       modalclass = "org-show";
     } else {
       modalclass = "org-hide";

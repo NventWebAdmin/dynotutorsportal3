@@ -30,7 +30,7 @@ class F extends Component {
   render() {
     console.log(this.props);
     let notificationhtml = [];
-    if (this.props.showNotification == "true") {
+    if (this.props.showNotification === "true") {
       for (let i = 0; i < this.props.notificationMessages.length; i++) {
         if (this.props.notificationMessages[i].type === "error") {
           notificationhtml.push(

@@ -28,10 +28,10 @@ export function signin(userDetails) {
   console.log(userDetails);
   console.log(configdata().authvendor);
   let result = {};
-  if (configdata().authvendor == "aws") {
+  if (configdata().authvendor === "aws") {
     result = signinAWS(userDetails);
   }
-  if (configdata().authvendor == "firebase") {
+  if (configdata().authvendor === "firebase") {
     result = signinFirebase(userDetails);
   }
 
@@ -42,10 +42,10 @@ export function refreshtoken(userDetails) {
   console.log(userDetails);
   console.log(configdata().authvendor);
   let result = {};
-  if (configdata().authvendor == "aws") {
+  if (configdata().authvendor === "aws") {
     result = refreshTokenAWS(userDetails);
   }
-  if (configdata().authvendor == "firebase") {
+  if (configdata().authvendor === "firebase") {
     result = refreshTokenFirebase(userDetails);
   }
 
@@ -55,10 +55,10 @@ export function refreshtoken(userDetails) {
 export function signup(userDetails) {
   console.log(userDetails);
   let result = {};
-  if (configdata().authvendor == "aws") {
+  if (configdata().authvendor === "aws") {
     result = signupAWS();
   }
-  if (configdata().authvendor == "firebase") {
+  if (configdata().authvendor === "firebase") {
     result = signupFirebase(userDetails);
   }
 
@@ -67,10 +67,10 @@ export function signup(userDetails) {
 
 export function resetPassword(userDetails) {
   let result = {};
-  if (configdata().authvendor == "aws") {
+  if (configdata().authvendor === "aws") {
     result = resetPasswordAWS(userDetails);
   }
-  if (configdata().authvendor == "firebase") {
+  if (configdata().authvendor === "firebase") {
     result = resetPasswordFirebase(userDetails);
   }
 
@@ -79,10 +79,10 @@ export function resetPassword(userDetails) {
 
 export function forgetPassword(userDetails) {
   let result = {};
-  if (configdata().authvendor == "aws") {
+  if (configdata().authvendor === "aws") {
     result = forgetPasswordAWS(userDetails);
   }
-  if (configdata().authvendor == "firebase") {
+  if (configdata().authvendor === "firebase") {
     result = forgetPasswordFirebase(userDetails);
   }
 
@@ -91,10 +91,10 @@ export function forgetPassword(userDetails) {
 
 export function isUserAlreadyExists(userDetails) {
   let result = {};
-  if (configdata().authvendor == "aws") {
+  if (configdata().authvendor === "aws") {
     result = isUserAlreadyExistsAWS(userDetails);
   }
-  if (configdata().authvendor == "firebase") {
+  if (configdata().authvendor === "firebase") {
     result = isUserAlreadyExistsFirebase(userDetails);
   }
 
@@ -103,10 +103,10 @@ export function isUserAlreadyExists(userDetails) {
 
 export function getUserProfile(userDetails) {
   let result = {};
-  if (configdata().authvendor == "aws") {
+  if (configdata().authvendor === "aws") {
     result = getUserProfileAWS(userDetails);
   }
-  if (configdata().authvendor == "firebase") {
+  if (configdata().authvendor === "firebase") {
     result = getUserProfileFirebase(userDetails);
   }
   return result;
@@ -114,10 +114,10 @@ export function getUserProfile(userDetails) {
 
 export function isAuthenticatedUser(userDetails) {
   let result = {};
-  if (configdata().authvendor == "aws") {
+  if (configdata().authvendor === "aws") {
     result = isAuthenticatedUserAWS(userDetails);
   }
-  if (configdata().authvendor == "firebase") {
+  if (configdata().authvendor === "firebase") {
     result = isAuthenticatedUserFirebase(userDetails);
   }
   return result;
@@ -125,10 +125,10 @@ export function isAuthenticatedUser(userDetails) {
 
 export function signInwithGoogle(userDetails) {
   let result = {};
-  if (configdata().authvendor == "aws") {
+  if (configdata().authvendor === "aws") {
     result = signInwithGoogleAWS(userDetails);
   }
-  if (configdata().authvendor == "firebase") {
+  if (configdata().authvendor === "firebase") {
     result = signInwithGoogleFirebase(userDetails);
   }
   return result;
@@ -136,10 +136,10 @@ export function signInwithGoogle(userDetails) {
 
 export function signInwithFacebook(userDetails) {
   let result = {};
-  if (configdata().authvendor == "aws") {
+  if (configdata().authvendor === "aws") {
     result = signInwithFacebookAWS(userDetails);
   }
-  if (configdata().authvendor == "firebase") {
+  if (configdata().authvendor === "firebase") {
     result = signInwithFacebookFirebase(userDetails);
   }
   return result;

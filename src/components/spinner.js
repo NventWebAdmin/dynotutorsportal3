@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { GetGoogleIcon, GetFontAwesomeIcon } from "./icons";
+import { GetFontAwesomeIcon } from "./icons";
 
 class F extends Component {
   constructor(props) {

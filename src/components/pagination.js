@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { GetLocalIcon, GetGoogleIcon } from "./icons";
+import { GetGoogleIcon } from "./icons";
 class F extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +18,7 @@ class F extends Component {
           display: "flex",
         }}
       >
-        {startOfRows == 0 ? (
+        {startOfRows === 0 ? (
           <div className="  ">
             <GetGoogleIcon
               name="first_page"
@@ -36,7 +36,7 @@ class F extends Component {
           </div>
         )}
 
-        {startOfRows == 0 ? (
+        {startOfRows === 0 ? (
           <div className=" ">
             <GetGoogleIcon
               name="chevron_left"

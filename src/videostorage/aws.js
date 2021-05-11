@@ -1,4 +1,4 @@
-import React from "react";
+//import React from "react";
 import axios from "axios";
 import {
   getImagefromData,
@@ -78,9 +78,9 @@ var s3 = new window.AWS.S3({
 
 */
 
-function getHtml(template) {
-  return template.join("\n");
-}
+// function getHtml(template) {
+//   return template.join("\n");
+// }
 
 export let getRecordsAWS = async (dataprops) => {
   let result = { isSuccess: "false", message: "", dataprops: {} };
@@ -112,6 +112,7 @@ export let getRecordsAWS = async (dataprops) => {
           lastmodified: content.LastModified,
           timenumber: timenumber,
         });
+        return fileNames;
         // var prefix = content.Key;
         // var folderUrl = decodeURIComponent(prefix.replace("/", ""));
         // console.log(folderUrl);
@@ -124,6 +125,7 @@ export let getRecordsAWS = async (dataprops) => {
         //   "</li>",
         // ]);
       });
+      console.log(albums);
       result = {
         isSuccess: "true",
         message: " retrieved file names from storage",
@@ -168,7 +170,7 @@ export async function getRecordAWS(dataprops) {
   let result = { isSuccess: "false", message: "", dataprops: {} };
   let folderUrl = dataprops.folderUrl;
   let fileName = dataprops.fileName;
-  let pdfpageNumber = dataprops.pdfpageNumber;
+  //let pdfpageNumber = dataprops.pdfpageNumber;
   let keyParam = folderUrl + "/" + fileName;
   var params = {
     Bucket: albumBucketName,
@@ -272,29 +274,29 @@ export async function getRecordAWS(dataprops) {
   return result;
 }
 
-function b64toBlob(b64Data, contentType, sliceSize) {
-  contentType = contentType || "";
-  sliceSize = sliceSize || 512;
+// function b64toBlob(b64Data, contentType, sliceSize) {
+//   contentType = contentType || "";
+//   sliceSize = sliceSize || 512;
 
-  var byteCharacters = atob(b64Data);
-  var byteArrays = [];
+//   var byteCharacters = atob(b64Data);
+//   var byteArrays = [];
 
-  for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
-    var slice = byteCharacters.slice(offset, offset + sliceSize);
+//   for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+//     var slice = byteCharacters.slice(offset, offset + sliceSize);
 
-    var byteNumbers = new Array(slice.length);
-    for (var i = 0; i < slice.length; i++) {
-      byteNumbers[i] = slice.charCodeAt(i);
-    }
+//     var byteNumbers = new Array(slice.length);
+//     for (var i = 0; i < slice.length; i++) {
+//       byteNumbers[i] = slice.charCodeAt(i);
+//     }
 
-    var byteArray = new Uint8Array(byteNumbers);
+//     var byteArray = new Uint8Array(byteNumbers);
 
-    byteArrays.push(byteArray);
-  }
+//     byteArrays.push(byteArray);
+//   }
 
-  var blob = new Blob(byteArrays, { type: contentType });
-  return blob;
-}
+//   var blob = new Blob(byteArrays, { type: contentType });
+//   return blob;
+// }
 
 export async function createRecordAWS(dataprops) {
   console.log(dataprops);
@@ -304,7 +306,7 @@ export async function createRecordAWS(dataprops) {
   let fileEvent = dataprops.fileEvent;
   var files, file, fileSuffix;
   fileSuffix = "";
-  if (fileEvent != "") {
+  if (fileEvent !== "") {
     files = fileEvent.target.files;
     if (!files || !files.length) {
       return alert("Please choose a file to upload first.");
@@ -334,7 +336,7 @@ export async function createRecordAWS(dataprops) {
       fileSuffix = "jpeg";
     }
     let f = new File([buf], "filename", { type: mime }); // note: [buf]
-    let blobUrl = URL.createObjectURL(f);
+    //    let blobUrl = URL.createObjectURL(f);
     file = f;
     // let link = document.createElement("a");
     // link.href = blobUrl;
@@ -404,10 +406,10 @@ export async function updateRecordAWS(dataprops) {
     ExpressionAttributeValues[valueindex] = fieldProps[i];
     if (index < lastIndex) {
       UpdateExpression =
-        UpdateExpression + "#a" + index + " = :" + "x" + index + " , ";
+        UpdateExpression + "#a" + index + " = :x" + index + " , ";
     } else {
       UpdateExpression =
-        UpdateExpression + "#a" + index + " = :" + "x" + index + " ";
+        UpdateExpression + "#a" + index + " = :x" + index + " ";
     }
     index = index + 1;
   }

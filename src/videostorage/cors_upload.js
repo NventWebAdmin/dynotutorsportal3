@@ -122,7 +122,7 @@ export function MediaUploader(options) {
  * Initiate the upload.
  */
 MediaUploader.prototype.upload = function () {
-  var self = this;
+  //var self = this;
   var xhr = new XMLHttpRequest();
 
   xhr.open(this.httpMethod, this.url, true);
@@ -216,9 +216,9 @@ MediaUploader.prototype.extractRange_ = function (xhr) {
  * @param {object} e XHR event
  */
 MediaUploader.prototype.onContentUploadSuccess_ = function (e) {
-  if (e.target.status == 200 || e.target.status == 201) {
+  if (e.target.status === 200 || e.target.status === 201) {
     this.onComplete(e.target.response);
-  } else if (e.target.status == 308) {
+  } else if (e.target.status === 308) {
     this.extractRange_(e.target);
     this.retryHandler.reset();
     this.sendFile_();

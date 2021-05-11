@@ -3,15 +3,14 @@ import ReactDOM from "react-dom";
 import {
   getRecorddata,
   createRecord,
-  bulkcreateRecord,
   updateRecord,
   deleteRecord,
 } from "../db/index";
 import {
   sortArray,
-  fieldTypeHtmltoDBmapping,
+  // fieldTypeHtmltoDBmapping,
   getLocalData,
-  serverButtonHandler,
+  // serverButtonHandler,
 } from "../js/index";
 
 import Paintpad from "./paintpad";
@@ -221,17 +220,18 @@ class F extends Component {
     let {
       tablename,
       defaultsortparam,
-      enablelocaldbdata,
+      //enablelocaldbdata,
       parentid,
       //  defaultdatafilter,
-      iscreateactive,
-      isviewactive,
-      iseditactive,
-      isdeleteactive,
+      // iscreateactive,
+      // isviewactive,
+      // iseditactive,
+      // isdeleteactive,
     } = this.props.compprops;
 
     let localdata = getLocalData(this.props);
     let { noteid, action } = this.props;
+    console.log(noteid);
     let { recorddata } = this.state;
     let { defaultdrawHistoryObj } = this.state;
     let divandcanvasEle = [];

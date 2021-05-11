@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-const fs = require("fs");
+//import React, { Component } from "react";
+//const fs = require("fs");
 
 function encode(data) {
   console.log(data);

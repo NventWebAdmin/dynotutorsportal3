@@ -17,10 +17,10 @@ import { configdata } from "../config";
 
 export function getImageRecordsStorage(dataprops) {
   let recArray;
-  if (configdata().imagestoragevendor == "aws") {
+  if (configdata().imagestoragevendor === "aws") {
     recArray = getRecordsAWS(dataprops);
   }
-  if (configdata().imagestoragevendor == "firebase") {
+  if (configdata().imagestoragevendor === "firebase") {
     recArray = getRecordsFirebase(dataprops);
   }
 
@@ -29,10 +29,10 @@ export function getImageRecordsStorage(dataprops) {
 
 export function getImageRecordStorage(dataprops) {
   let rec;
-  if (configdata().imagestoragevendor == "aws") {
+  if (configdata().imagestoragevendor === "aws") {
     rec = getRecordAWS(dataprops);
   }
-  if (configdata().imagestoragevendor == "firebase") {
+  if (configdata().imagestoragevendor === "firebase") {
     rec = getRecordFirebase(dataprops);
   }
   return rec;
@@ -41,10 +41,10 @@ export function getImageRecordStorage(dataprops) {
 export function createImageRecordStorage(dataprops) {
   console.log(dataprops);
   let rec;
-  if (configdata().imagestoragevendor == "aws") {
+  if (configdata().imagestoragevendor === "aws") {
     rec = createRecordAWS(dataprops);
   }
-  if (configdata().imagestoragevendor == "firebase") {
+  if (configdata().imagestoragevendor === "firebase") {
     rec = createRecordFirebase(dataprops);
   }
   return rec;
@@ -53,10 +53,10 @@ export function createImageRecordStorage(dataprops) {
 export function updateRecord(dataprops) {
   console.log(dataprops);
   let rec;
-  if (configdata().imagestoragevendor == "aws") {
+  if (configdata().imagestoragevendor === "aws") {
     rec = updateRecordAWS(dataprops);
   }
-  if (configdata().imagestoragevendor == "firebase") {
+  if (configdata().imagestoragevendor === "firebase") {
     rec = updateRecordFirebase(dataprops);
   }
   return rec;
@@ -65,10 +65,10 @@ export function updateRecord(dataprops) {
 export function deleteRecord(dataprops) {
   console.log(dataprops);
   let rec;
-  if (configdata().imagestoragevendor == "aws") {
+  if (configdata().imagestoragevendor === "aws") {
     rec = deleteRecordAWS(dataprops);
   }
-  if (configdata().imagestoragevendor == "firebase") {
+  if (configdata().imagestoragevendor === "firebase") {
     rec = deleteRecordFirebase(dataprops);
   }
   return rec;

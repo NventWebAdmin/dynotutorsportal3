@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import Calender from "../components/calender";
 import Contactus from "../components/contactus";
-import Mycourses from "../components/mycourses";
+//import Mycourses from "../components/mycourses";
 import Notepad from "../components/notepadlist";
 import Recorddatalistortable from "../components/recorddatalistortable2";
 import Faqs from "../components/faqs";
 import "../App.css";
-import Uigen from "../components/uigen2";
-import localdbdata from "../db/localdb/pageperprofiledata.json";
+//import localdbdata from "../db/localdb/pageperprofiledata.json";
 
 class F extends Component {
   constructor(props) {
@@ -92,7 +91,7 @@ class F extends Component {
     navmenuRowHtml.push(
       <div key="navmenuloginrow" className="org-fr org-fai-c  org-fjc-sb ">
         <div></div>
-        {siteportalurl != "" ? (
+        {siteportalurl !== "" ? (
           <div
             className="sph org-cursor"
             onClick={() => {
@@ -104,7 +103,7 @@ class F extends Component {
         ) : (
           ""
         )}
-        {sitelogouturl != "" ? (
+        {sitelogouturl !== "" ? (
           <div
             className="sph org-cursor"
             onClick={() => {
@@ -308,7 +307,7 @@ class F extends Component {
 
     siteintroHtml.push(<div key="navmenutrow">{navmenuRowHtml}</div>);
 
-    if (activemaintab === "" && siteintroposition != "") {
+    if (activemaintab === "" && siteintroposition !== "") {
       siteintroHtml.push(
         <div key="siteintro" style={{ position: "relative", width: "100%" }}>
           <img

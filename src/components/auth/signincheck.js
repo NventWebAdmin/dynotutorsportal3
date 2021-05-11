@@ -1,15 +1,15 @@
 import React from "react";
 import Signin from "./signin";
 import Sfdclogo from "../../images/sfdc.svg";
-import { isAuthenticatedUser } from "../../auth/index";
-import {
-  signin,
-  refreshtoken,
-  signup,
-  resetPassword,
-  signInwithGoogle,
-  signInwithFacebook,
-} from "../../auth/index";
+// import { isAuthenticatedUser } from "../../auth/index";
+// import {
+//   signin,
+//   refreshtoken,
+//   signup,
+//   resetPassword,
+//   signInwithGoogle,
+//   signInwithFacebook,
+// } from "../../auth/index";
 
 function F(Components) {
   let textPanel = [];

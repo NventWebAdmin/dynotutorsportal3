@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   getVideoRecordsStorage,
   createVideoRecordStorage,
@@ -38,16 +38,17 @@ export default class F extends React.Component {
       fileEvent: e,
       callback: (result) => {
         console.log(result);
-        if (result.isSuccess == "true") {
+        if (result.isSuccess === "true") {
           // this.getHtmlInputVideo({ Videohtmlid: "photo1" });
         } else {
         }
       },
     });
+    console.log(result);
   };
 
   inputVideoradiochange = async (e) => {
-    if (e.target.value == "fromlocal") {
+    if (e.target.value === "fromlocal") {
       this.stopStreamedVideo();
       this.setState({
         showFromLocal: true,
@@ -56,7 +57,7 @@ export default class F extends React.Component {
         showpreviewVideoPanel: true,
       });
     }
-    if (e.target.value == "fromlibrary") {
+    if (e.target.value === "fromlibrary") {
       this.stopStreamedVideo();
       this.setState({
         showFromLocal: false,
@@ -66,7 +67,7 @@ export default class F extends React.Component {
       });
       this.getLibrayData();
     }
-    if (e.target.value == "fromcamera") {
+    if (e.target.value === "fromcamera") {
       this.stopStreamedVideo();
       await this.setState({
         showFromLocal: false,
@@ -98,7 +99,7 @@ export default class F extends React.Component {
       fileEvent: "",
       callback: (result) => {
         console.log(result);
-        if (result.isSuccess == "true") {
+        if (result.isSuccess === "true") {
           console.log(result.dataprops.fileNames);
           let libraryOptions = [];
           for (let i in result.dataprops.fileNames) {
@@ -151,7 +152,7 @@ export default class F extends React.Component {
     console.log(this.props.previewVideoHtmlId);
     console.log(previewVideoHtml);
 
-    if (ds.type == "fromlocal") {
+    if (ds.type === "fromlocal") {
       let file = e.target.files[0];
       previewVideoHtml.src = URL.createObjectURL(file);
       //   "http://techslides.com/demos/sample-videos/small.mp4";
@@ -163,13 +164,13 @@ export default class F extends React.Component {
       // })(previewVideoHtml);
       // reader.readAsDataURL(file);
     }
-    if (ds.type == "fromlibrary") {
+    if (ds.type === "fromlibrary") {
       console.log(e.target.value);
-      if (e.target.value != "") {
+      if (e.target.value !== "") {
         this.getVideoData(e.target.value);
       }
     }
-    if (ds.type == "fromcamera") {
+    if (ds.type === "fromcamera") {
       let width = 640;
       let height = 480;
       console.log(width);
@@ -196,7 +197,7 @@ export default class F extends React.Component {
       fileEvent: "",
       callback: (result) => {
         console.log(result);
-        if (result.isSuccess == "true") {
+        if (result.isSuccess === "true") {
           console.log(result.dataprops.imgsrc);
           previewVideoHtml.src = result.dataprops.imgsrc;
         } else {
@@ -225,13 +226,13 @@ export default class F extends React.Component {
     let offScreenCanvasCtx = offScreenCanvas.getContext("2d");
 
     // cteate Video
-    var Video = new Video();
-    Video.src = base64Video;
-    Video.setAttribute("crossorigin", "anonymous");
+    var video = new window.Video();
+    video.src = base64Video;
+    video.setAttribute("crossorigin", "anonymous");
 
     // set its dimension to rotated size
-    offScreenCanvas.height = Video.width;
-    offScreenCanvas.width = Video.height;
+    offScreenCanvas.height = video.width;
+    offScreenCanvas.width = video.height;
 
     // rotate and draw source Video into the off-screen canvas:
     if (isClockwise) {
@@ -241,7 +242,7 @@ export default class F extends React.Component {
       offScreenCanvasCtx.rotate((-90 * Math.PI) / 180);
       offScreenCanvasCtx.translate(-offScreenCanvas.height, 0);
     }
-    offScreenCanvasCtx.drawImage(Video, 0, 0);
+    offScreenCanvasCtx.drawImage(video, 0, 0);
 
     // encode image to data-uri with base64
     return offScreenCanvas.toDataURL("image/jpeg", 100);
@@ -314,7 +315,7 @@ export default class F extends React.Component {
           </div>
           <div className=" org-flexbasis-100p org-mflexbasis-40p org-lflexbasis-40p  ">
             {/* file upload */}
-            {showFromLocal == true ? (
+            {showFromLocal === true ? (
               <div>
                 <input
                   data-type="fromlocal"
@@ -327,7 +328,7 @@ export default class F extends React.Component {
               ""
             )}
 
-            {showFromLibrary == true ? (
+            {showFromLibrary === true ? (
               <div>
                 <select
                   data-type="fromlibrary"
@@ -347,7 +348,7 @@ export default class F extends React.Component {
               ""
             )}
 
-            {showFromCamera == true ? (
+            {showFromCamera === true ? (
               <div>
                 <div data-type="fromcamera" onClick={this.inputVideoselect}>
                   take pic
@@ -359,7 +360,7 @@ export default class F extends React.Component {
             )}
           </div>
           <div className=" org-flexbasis-100p org-mflexbasis-40p org-lflexbasis-40p  ">
-            {showpreviewVideoPanel == true ? (
+            {showpreviewVideoPanel === true ? (
               <div className="org-fr org-fai-s" style={{ width: "100%" }}>
                 <div className="org-fr ">
                   <div onClick={this.editPriviewVideo}>Rotate</div>
