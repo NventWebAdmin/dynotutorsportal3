@@ -1,7 +1,7 @@
 const sgMail = require("@sendgrid/mail");
-let key =
-  "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";
-sgMail.setApiKey(key);
+let key =""
+  
+
 var nodemailer = require("nodemailer");
 
 export const sendMail = (props) => {
@@ -10,8 +10,7 @@ export const sendMail = (props) => {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "ypradeeprao@gmail.com",
-      pass: "Tir6tw3q@@",
+     
     },
   });
 
